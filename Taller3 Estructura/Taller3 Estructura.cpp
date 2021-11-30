@@ -2,10 +2,13 @@
 //
 
 #include <iostream>
+#include "Sistema.h"
 
 int main()
 {
-    std::cout << "¡Vamos que se puede!";
+   
+    Sistema* sistema = new Sistema;
+    sistema->menuPrincipal();
 }
 
 
