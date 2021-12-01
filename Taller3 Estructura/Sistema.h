@@ -23,6 +23,8 @@ public:
 
 	void menuSalaCine();
 
-	void lecturaArchivo();
+	void lecturaClientes();
+
+	void lecturaPeliculas();
 };
 

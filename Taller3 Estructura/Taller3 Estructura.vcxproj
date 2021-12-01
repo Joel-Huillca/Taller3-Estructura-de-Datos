@@ -139,10 +139,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ArbolAvl.cpp" />
+    <ClCompile Include="Cliente.cpp" />
+    <ClCompile Include="Mpp.cpp" />
+    <ClCompile Include="Pelicula.cpp" />
     <ClCompile Include="Sistema.cpp" />
     <ClCompile Include="Taller3 Estructura.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ArbolAvl.h" />
+    <ClInclude Include="Cliente.h" />
+    <ClInclude Include="Mpp.h" />
+    <ClInclude Include="Pelicula.h" />
     <ClInclude Include="Sistema.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -157,6 +157,59 @@ void Sistema::menuSalaCine()
 }
 
 
-void Sistema::lecturaArchivo()
+void Sistema::lecturaClientes()
 {
+	ifstream archivoClientes("Clientes.txt");
+	string linea = "";
+
+	while (getline(archivoClientes, linea))
+	{
+		string nombre;
+		string apellido;
+		string rut;
+		string pelicula;
+		string fila;
+		string columna;
+		string cola;
+
+		stringstream s(linea);
+
+		getline(s, nombre, ';');
+		getline(s, apellido, ';');
+		getline(s, rut, ';');
+		getline(s, pelicula, ';');
+		getline(s, fila, ';');
+		getline(s, columna, ';');
+		getline(s, cola, ';');
+
+		transform(nombre.begin(), nombre.end(), nombre.begin(), ::toupper);
+
+	}
+}
+
+void Sistema::lecturaPeliculas()
+{
+	ifstream archivoPeliculas("Peliculas.txt");
+	string linea = "";
+
+	while (getline(archivoPeliculas, linea))
+	{
+		string nombrePelicula;
+		string duracionHoras;
+		string duracionMinutos;
+		string generoPelicula;
+		string puntajePelicula;
+		string clasificacion;
+
+		stringstream s(linea);
+
+		getline(s, nombrePelicula, '/');
+		getline(s, duracionHoras, '/');
+		getline(s, duracionMinutos, '/');
+		getline(s, generoPelicula, '/');
+		getline(s, puntajePelicula, '/');
+		getline(s, clasificacion, '/');
+
+		transform(nombrePelicula.begin(), nombrePelicula.end(), nombrePelicula.begin(), ::toupper);
+	}
 }
