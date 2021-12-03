@@ -23,6 +23,8 @@ public:
 
 	void menuSalaCine();
 
+	void menuEstadisticas();
+
 	void lecturaClientes();
 
 	void lecturaPeliculas();

@@ -16,7 +16,7 @@ void Sistema::menuPrincipal()
 	char op1;
 	while (salir == false)
 	{
-		cout << "1.Menu Principal\na.Fila de espera\nb.Sala de cine\nc.Estadistica\nd.Salir\nElija una opcion: ";
+		cout << "\n>>Menu Principal\n  a) Fila de espera\n  b) Sala de cine\n  c) Estadistica\n  d) Salir\n  Elija una opcion: ";
 		cin >> opcionString;
 
 		while (!opcionString._Equal("a") && !opcionString._Equal("b") && !opcionString._Equal("c") && !opcionString._Equal("d"))
@@ -47,12 +47,13 @@ void Sistema::menuPrincipal()
 		break;
 		case 'c':
 		{
-			cout << "opcion cc"<<endl;
+			system("cls");
+			menuEstadisticas();
 		}
 		break;
 		case 'd':
 			salir = true;
-			cout << "saliendo";
+			cout << "\n\n ------------------------------------- \n|Hasta luego y GRACIAS por preferirnos|\n|	    Cine Ritsa 3D	      |\n ------------------------------------- \n";// _____________________________________ 
 		default:
 			break;
 		}
@@ -130,29 +131,80 @@ void Sistema::menuSalaCine()
 
 	switch (op2)
 	{
+		case 'a':
+		{
+			cout << "sala 1";
+		}
+		break;
+		case 'b':
+		{
+			cout << "sala 2";
+		}
+		break;
+		case 'c':
+		{
+			cout << "sala 3";
+		}
+		break;
+		case 'd':
+		{
+			cout << "Saliendo del menu sala de cine..." << endl;
+		}
+		break;
+
+	}
+}
+
+void Sistema::menuEstadisticas()
+{
+	string opcion;
+	char opcion1;
+	cout << "2.Menu Estadisticas\n  a) Porcentaje de espectadores por pelicula \n  b) Cantidad de personas en cola\n  c) Cantidad de personas por sala\n  d) Persona más longeva y personas más joven\n  e) Volver\n  Elija una opcion para el menu sala de cine: ";
+	cin >> opcion;
+
+	while (!opcion._Equal("a") && !opcion._Equal("b") && !opcion._Equal("c") && !opcion._Equal("d") && !opcion._Equal("e"))
+	{
+		system("cls");
+		cout << "2.Menu Estadisticas\n  a) Porcentaje de espectadores por pelicula \n  b) Cantidad de personas en cola\n  c) Cantidad de personas por sala\n  d) Persona más longeva y personas más joven\n  e) Volver\n  Elija una opcion para el menu sala de cine: ";
+		cin >> opcion;
+	}
+
+	if (opcion._Equal("a")) opcion1 = 'a';
+	if (opcion._Equal("b")) opcion1 = 'b';
+	if (opcion._Equal("c")) opcion1 = 'c';
+	if (opcion._Equal("d")) opcion1 = 'd';
+	if (opcion._Equal("e")) opcion1 = 'e';
+
+
+	switch (opcion1)
+	{
 	case 'a':
 	{
-		cout << "sala 1";
+		cout << "aaaaaaaaaa";
 	}
 	break;
 	case 'b':
 	{
-		cout << "sala 2";
+		cout << "bbbbbbbbbbbb";
 	}
 	break;
 	case 'c':
 	{
-		cout << "sala 3";
+		cout << "ccccccccc";
 	}
 	break;
 	case 'd':
 	{
-		cout << "Saliendo del menu sala de cine..." << endl;
+		cout << "dddddddddd" << endl;
 	}
 	break;
 
-	default:
-		break;
+	case 'e':
+	{
+		cout << "eeeeeeeeeeeee" << endl;
+	}
+	break;
+
 	}
 }
 
