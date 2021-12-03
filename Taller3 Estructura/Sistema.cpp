@@ -22,7 +22,7 @@ void Sistema::menuPrincipal()
 		while (!opcionString._Equal("a") && !opcionString._Equal("b") && !opcionString._Equal("c") && !opcionString._Equal("d"))
 		{
 			system("cls");
-			cout << "Ingrese una opcion correcta\n1.Menu Principal\na.Fila de espera\nb.Sala de cine\nc.Estadistica\nd.Salir\nElija una opcion: ";
+			cout << "Ingrese una opcion correcta\n>>Menu Principal\na.Fila de espera\nb.Sala de cine\nc.Estadistica\nd.Salir\nElija una opcion: ";
 			cin >> opcionString;
 		}
 		
@@ -65,13 +65,13 @@ void Sistema::menuFilaEspera()
 {
 	string op2String;
 	char op2;
-	cout << "2.Menu fila de espera\na.Atender la fila\nb.Agregar personas a la fila\nc.Vaciar la fila\nd.Volver\nElija una opcion para el menu fila de espera: ";
+	cout << "\n>>Menu fila de espera\n a) Atender la fila\n b) Agregar personas a la fila\n c) Vaciar la fila\n d) Volver\n Elija una opcion para el menu fila de espera: ";
 	cin >> op2String;
 
 	while (!op2String._Equal("a") && !op2String._Equal("b") && !op2String._Equal("c") && !op2String._Equal("d"))
 	{
 		system("cls");
-		cout << "Ingrese una opcion correcta\n2.Menu fila de espera\na.Atender la fila\nb.Agregar personas a la fila\nc.Vaciar la fila\nd.Volver\nElija una opcion para el menu fila de espera: ";
+		cout << "Ingrese una opcion correcta\n>>Menu fila de espera\n a) Atender la fila\n b) Agregar personas a la fila\n c) Vaciar la fila\n d) Volver\n Elija una opcion para el menu fila de espera: ";
 		cin >> op2String;
 	}
 
@@ -113,13 +113,13 @@ void Sistema::menuSalaCine()
 {
 	string op2String;
 	char op2;
-	cout << "2.Menu Sala de Cine\na.Sala 1\nb.Sala 2\nc.Sala 3\nd.Volver\nElija una opcion para el menu sala de cine: ";
+	cout << "\n>>Menu Sala de Cine\n a) Sala 1\n b) Sala 2\n c) Sala 3\n d) Volver\n Elija una opcion para el menu sala de cine: ";
 	cin >> op2String;
 
 	while (!op2String._Equal("a") && !op2String._Equal("b") && !op2String._Equal("c") && !op2String._Equal("d"))
 	{
 		system("cls");
-		cout << "Ingrese una opcion correcta\n2.Menu fila de espera\na.Atender la fila\nb.Agregar personas a la fila\nc.Vaciar la fila\nd.Volver\nElija una opcion para el menu fila de espera: ";
+		cout << "Ingrese una opcion correcta\n>>Menu Sala de Cine\n a) Sala 1\n b) Sala 2\n c) Sala 3\n d) Volver\n Elija una opcion para el menu sala de cine: ";
 		cin >> op2String;
 	}
 
@@ -159,13 +159,13 @@ void Sistema::menuEstadisticas()
 {
 	string opcion;
 	char opcion1;
-	cout << "2.Menu Estadisticas\n  a) Porcentaje de espectadores por pelicula \n  b) Cantidad de personas en cola\n  c) Cantidad de personas por sala\n  d) Persona más longeva y personas más joven\n  e) Volver\n  Elija una opcion para el menu sala de cine: ";
+	cout << "\n>>Menu Estadisticas\n  a) Porcentaje de espectadores por pelicula \n  b) Cantidad de personas en cola\n  c) Cantidad de personas por sala\n  d) Persona más longeva y personas más joven\n  e) Volver\n  Elija una opcion para el menu estadisticas: ";
 	cin >> opcion;
 
 	while (!opcion._Equal("a") && !opcion._Equal("b") && !opcion._Equal("c") && !opcion._Equal("d") && !opcion._Equal("e"))
 	{
 		system("cls");
-		cout << "2.Menu Estadisticas\n  a) Porcentaje de espectadores por pelicula \n  b) Cantidad de personas en cola\n  c) Cantidad de personas por sala\n  d) Persona más longeva y personas más joven\n  e) Volver\n  Elija una opcion para el menu sala de cine: ";
+		cout << "Ingrese una opcion correcta\n>>Menu Estadisticas\n  a) Porcentaje de espectadores por pelicula \n  b) Cantidad de personas en cola\n  c) Cantidad de personas por sala\n  d) Persona más longeva y personas más joven\n  e) Volver\n  Elija una opcion para el menu estadisticas: ";
 		cin >> opcion;
 	}
 
