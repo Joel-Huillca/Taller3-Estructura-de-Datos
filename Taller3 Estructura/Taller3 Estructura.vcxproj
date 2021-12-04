@@ -142,6 +142,7 @@
     <ClCompile Include="ArbolAvl.cpp" />
     <ClCompile Include="Cliente.cpp" />
     <ClCompile Include="Mpp.cpp" />
+    <ClCompile Include="NodoAVL.cpp" />
     <ClCompile Include="NodoMpp.cpp" />
     <ClCompile Include="Pelicula.cpp" />
     <ClCompile Include="Sistema.cpp" />
@@ -151,6 +152,7 @@
     <ClInclude Include="ArbolAvl.h" />
     <ClInclude Include="Cliente.h" />
     <ClInclude Include="Mpp.h" />
+    <ClInclude Include="NodoAVL.h" />
     <ClInclude Include="NodoMpp.h" />
     <ClInclude Include="Pelicula.h" />
     <ClInclude Include="Sistema.h" />
