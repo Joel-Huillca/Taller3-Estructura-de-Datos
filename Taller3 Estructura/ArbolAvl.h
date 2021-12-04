@@ -16,10 +16,14 @@ public:
 
 	NodoAVL* getRaiz();
 
-	void agregarCliente(Cliente* cliente);
+	void agregarCliente(Cliente* cliente);// Agregar de forma ABB		 xxx   |Solo como referencia|   xxx
 
-	int cantClientes();
-	int cantNodos(NodoAVL* cliente);
+
+	int calcularBalance(NodoAVL* nodoCliente); // ALV - Por completar
+
+
+	int cantClientes();// ABB
+	int cantNodos(NodoAVL* cliente);//ABB
 
 	~ArbolAvl();
 

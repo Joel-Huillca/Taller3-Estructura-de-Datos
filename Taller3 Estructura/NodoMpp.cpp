@@ -19,12 +19,7 @@ NodoMpp::NodoMpp(int fila, int columna, char tipo)
 	this->columna = columna;
 	this->tipo = tipo;
 }
-/**
-*Destructor Nodo
-*/
-NodoMpp::~NodoMpp()
-{
-}
+
 
 NodoMpp* NodoMpp::getLeft()
 {
@@ -69,4 +64,11 @@ void NodoMpp::setFila(int fila)
 void NodoMpp::setColumna(int columna)
 {
 	this->columna = columna;
+}
+
+
+
+NodoMpp::~NodoMpp()
+{
+	//delete cliente; // llamar al Nodo
 }

@@ -15,7 +15,7 @@ public:
 
 	NodoMpp(int fila, int columna, char tipo);
 
-	~NodoMpp();
+	
 
 	NodoMpp* getLeft();
 	NodoMpp* getUp();
@@ -27,5 +27,7 @@ public:
 	void setUp(NodoMpp* nodo);
 	void setFila(int fila);
 	void setColumna(int columna);
+
+	~NodoMpp();
 };
 

@@ -22,6 +22,13 @@ void ArbolAvl::agregarCliente(Cliente* cliente)
 	}
 }
 
+int ArbolAvl::calcularBalance(NodoAVL* nodoCliente)
+{
+	return 0;
+}
+
+
+
 int ArbolAvl::cantClientes()
 {
 	return cantNodos(raiz);
@@ -42,4 +49,5 @@ int ArbolAvl::cantNodos(NodoAVL* cliente)
 
 ArbolAvl::~ArbolAvl()
 {
+	//delete;
 }
