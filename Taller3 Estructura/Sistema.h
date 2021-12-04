@@ -19,6 +19,8 @@ public:
 
 	void menuPrincipal();
 
+	bool subMenu();
+
 	void menuFilaEspera();
 
 	void menuSalaCine();

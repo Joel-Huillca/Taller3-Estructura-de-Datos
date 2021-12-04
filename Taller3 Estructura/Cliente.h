@@ -14,6 +14,7 @@ private:
 	int columna;
 	string sala_cola;
 
+
 public:
 	Cliente();
 	Cliente(string nombre, string apellido, string rut, string pelicula, int fila, int columna, string sala_Cola);
@@ -30,10 +31,10 @@ public:
 
 /*  Set's de la clase Cliente
 	@param */
-	string setPelicula();
-	int setFila();
-	int setColumna();
-	string setSala_columna();
+	string setPelicula(string new_pelicula);
+	int setFila(int new_fila);
+	int setColumna(int new_columna);
+	string setSala_columna(string new_sala_Columna);
 
 };
 

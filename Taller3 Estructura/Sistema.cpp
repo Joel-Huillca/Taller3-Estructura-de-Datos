@@ -2,10 +2,12 @@
 
 Sistema::Sistema()
 {
+
 }
 
 Sistema::~Sistema()
 {
+
 }
 
 void Sistema::menuPrincipal()
@@ -16,13 +18,13 @@ void Sistema::menuPrincipal()
 	char op1;
 	while (salir == false)
 	{
-		cout << "\n>>Menu Principal\n  a) Fila de espera\n  b) Sala de cine\n  c) Estadistica\n  d) Salir\n  Elija una opcion: ";
+		cout << "\n    MENU PRINCIPAL\n  [a] Fila de espera\n  [b] Sala de cine\n  [c] Estadistica\n  [d] Salir\n  Elija una opcion: ";
 		cin >> opcionString;
 
 		while (!opcionString._Equal("a") && !opcionString._Equal("b") && !opcionString._Equal("c") && !opcionString._Equal("d"))
 		{
 			system("cls");
-			cout << "Ingrese una opcion correcta\n>>Menu Principal\na.Fila de espera\nb.Sala de cine\nc.Estadistica\nd.Salir\nElija una opcion: ";
+			cout << "\nIngrese una opcion correcta\n\n    MENU PRINCIPAL\n  [a] Fila de espera\n  [b] Sala de cine\n  [c] Estadistica\n  [d] Salir\n  Elija una opcion: ";
 			cin >> opcionString;
 		}
 		
@@ -36,42 +38,90 @@ void Sistema::menuPrincipal()
 		case 'a':
 		{
 			system("cls");
-			menuFilaEspera();
+			bool seguir = subMenu();
+			if (seguir) menuFilaEspera();
 		}
 		break;
 		case 'b':
 		{
 			system("cls");
-			menuSalaCine();
+			bool seguir = subMenu();
+			if (seguir)menuSalaCine();
 		}
 		break;
 		case 'c':
 		{
 			system("cls");
-			menuEstadisticas();
+			bool seguir = subMenu();
+			if (seguir) menuEstadisticas();
 		}
 		break;
 		case 'd':
 			salir = true;
 			cout << "\n\n ------------------------------------- \n|Hasta luego y GRACIAS por preferirnos|\n|	    Cine Ritsa 3D	      |\n ------------------------------------- \n";// _____________________________________ 
-		default:
-			break;
 		}
 	}
 	
+}
+
+bool Sistema::subMenu()
+{
+	bool salir = false;
+	string opcionString;
+	char op1;
+	while (salir == false)
+	{
+		cout << "\n  ****|Sub-Menu|****\n  a) Revisar pelicula\n  b) Asignar pelicula\n  c) Iniciar Pelicula\n  d) Volver\n  Elija una opcion: ";
+		cin >> opcionString;
+
+		while (!opcionString._Equal("a") && !opcionString._Equal("b") && !opcionString._Equal("c") && !opcionString._Equal("d"))
+		{
+			system("cls");
+			cout << "\nIngrese una opcion correcta\n\n  ****|Sub-Menu|****\n  a) Revisar pelicula\n  b) Asignar pelicula\n  c) Iniciar Pelicula\n  d) Volver\n  Elija una opcion: ";
+			cin >> opcionString;
+		}
+
+		if (opcionString._Equal("a")) op1 = 'a';
+		if (opcionString._Equal("b")) op1 = 'b';
+		if (opcionString._Equal("c")) op1 = 'c';
+		if (opcionString._Equal("d")) op1 = 'd';
+
+		switch (op1)
+		{
+			case 'a':
+			{
+				cout << "\nLa pelicula es: xxxxxxxxxxxxx"<<endl;
+				return true;
+			}
+			case 'b':
+			{
+				string pelicula;
+				cout << "Ingrese la pelicula:";
+				cin >> pelicula;
+				return true;
+			}
+			case 'c':
+			{
+				cout << "\nIniciando pelicula....\n";
+				return true;
+			}
+			case 'd':
+				return false;
+		}
+	}
 }
 
 void Sistema::menuFilaEspera()
 {
 	string op2String;
 	char op2;
-	cout << "\n>>Menu fila de espera\n a) Atender la fila\n b) Agregar personas a la fila\n c) Vaciar la fila\n d) Volver\n Elija una opcion para el menu fila de espera: ";
+	cout << "\n>>Menu fila de espera\n a) Atender la fila\n b) Agregar personas a la fila\n c) Vaciar la fila\n d) Volver\n Elija una opcion: ";
 	cin >> op2String;
 
 	while (!op2String._Equal("a") && !op2String._Equal("b") && !op2String._Equal("c") && !op2String._Equal("d"))
 	{
 		system("cls");
-		cout << "Ingrese una opcion correcta\n>>Menu fila de espera\n a) Atender la fila\n b) Agregar personas a la fila\n c) Vaciar la fila\n d) Volver\n Elija una opcion para el menu fila de espera: ";
+		cout << "Ingrese una opcion correcta\n>>Menu fila de espera\n a) Atender la fila\n b) Agregar personas a la fila\n c) Vaciar la fila\n d) Volver\n Elija una opcion: ";
 		cin >> op2String;
 	}
 
@@ -207,7 +257,6 @@ void Sistema::menuEstadisticas()
 
 	}
 }
-
 
 void Sistema::lecturaClientes()
 {
