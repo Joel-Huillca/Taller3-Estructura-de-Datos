@@ -129,33 +129,29 @@ void Sistema::menuFilaEspera()
 	if (op2String._Equal("b")) op2 = 'b';
 	if (op2String._Equal("c")) op2 = 'c';
 	if (op2String._Equal("d")) op2 = 'd';
-	
 
 	switch (op2)
 	{
-	case 'a':
-	{
-		cout << "atendiendo fila";
-	}
-	break;
-	case 'b':
-	{
-		cout << "agregando personas";
-	}
-	break;
-	case 'c':
-	{
-		cout << "vaciando fila";
-	}
-	break;
-	case 'd':
-	{
-		cout << "Saliendo del menu fila de espera..."<<endl;
-	}
-	break;
-	
-	default:
-		break;
+		case 'a':
+		{
+			cout << "atendiendo fila";
+		}
+			break;
+		case 'b':
+		{
+			cout << "agregando personas";
+		}
+			break;
+		case 'c':
+		{
+			cout << "vaciando fila";
+		}
+			break;
+		case 'd':
+		{
+			cout << "Saliendo del menu fila de espera..."<<endl;
+		}
+			break;
 	}
 }
 
@@ -314,3 +310,5 @@ void Sistema::lecturaPeliculas()
 		transform(nombrePelicula.begin(), nombrePelicula.end(), nombrePelicula.begin(), ::toupper);
 	}
 }
+
+
