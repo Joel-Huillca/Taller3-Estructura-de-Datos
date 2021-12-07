@@ -41,7 +41,20 @@ void Sistema::lecturaClientes()
 		fila = stoi(filaAux);
 		columna = stoi(columnaAux);
 
+		if (salaCola == "C")
+		{
+			
+			Cliente* cliente = new Cliente(nombre, apellido, rut, pelicula, fila, columna, salaCola);
+			cola.push(*cliente);
+		}
+		else
+		{
+			cout << "se agrega a la sala de cine";
+		}
+
 		transform(nombre.begin(), nombre.end(), nombre.begin(), ::toupper);
+
+
 
 	}
 	archivoClientes.close();
