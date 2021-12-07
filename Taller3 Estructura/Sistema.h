@@ -19,6 +19,7 @@ class Sistema
 private:
 	queue<Cliente> cola;
 	Pelicula* pelicula;
+	Cliente* cliente;
 public:
 	Sistema();
 	~Sistema();

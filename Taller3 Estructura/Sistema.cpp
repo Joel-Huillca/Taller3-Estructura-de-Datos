@@ -218,39 +218,28 @@ void Sistema::menuFilaEspera()
 		break;
 		case 'b':
 		{
-			try
-			{
-				cout << "Ingrese nombre del cliente ha agregar: ";
-				string nombre;
-				cin >> nombre;
-				cout << "Ingrese apellido del cliente ha agregar: ";
-				string apellido;
-				cin >> apellido;
-				cout << "Ingrese rut del cliente ha agregar: ";
-				string rut;
-				cin >> rut;
-				cout << "Ingrese pelicula que desea ver el cliente: ";
-				string pelicula;
-				cin >> pelicula;
-				//cout << nombre << apellido << rut << pelicula;
-				lecturaPeliculas();
-				if (this->pelicula->getNombrePelicula() == nombre)
-				{
-					Cliente* cliente = new Cliente(nombre, apellido, rut, pelicula);
-					cola.push(*cliente);
-				}
-				else
-				{
-					cout << "El cine no registra la pelicula" << endl;
-					menuFilaEspera();
-				}
-			}
-			catch (const std::exception&)
-			{
-				cout << "Datos ingresados no validos"<<endl;
-				menuFilaEspera();	
-			}
+			cout << "Ingrese nombre del cliente ha agregar: ";
+			string nombre;
+			cin >> nombre;
+			cout << "Ingrese apellido del cliente ha agregar: ";
+			string apellido;
+			cin >> apellido;
+			cout << "Ingrese rut del cliente ha agregar: ";
+			string rut;
+			cin >> rut;
+			cout << "Ingrese pelicula que desea ver el cliente: ";
+			string pelicula;
+			cin >> pelicula;
+			//cout << nombre << apellido << rut << pelicula;
+
+			
+			Cliente* cliente = new Cliente(nombre, apellido, rut, pelicula);
+			cola.push(*cliente);
+		
+			menuFilaEspera();
+			
 		}
+	
 		break;
 		case 'c':
 		{
