@@ -38,22 +38,20 @@ void Sistema::menuPrincipal()
 		case 'a':
 		{
 			system("cls");
-			bool seguir = subMenu();
-			if (seguir) menuFilaEspera();
+			menuFilaEspera();
 		}
 		break;
 		case 'b':
 		{
 			system("cls");
-			bool seguir = subMenu();
-			if (seguir)menuSalaCine();
+			menuSalaCine();
 		}
 		break;
 		case 'c':
 		{
 			system("cls");
-			bool seguir = subMenu();
-			if (seguir) menuEstadisticas();
+			
+			menuEstadisticas();
 		}
 		break;
 		case 'd':
@@ -179,17 +177,17 @@ void Sistema::menuSalaCine()
 	{
 		case 'a':
 		{
-			cout << "sala 1";
+			subMenu();
 		}
 		break;
 		case 'b':
 		{
-			cout << "sala 2";
+			subMenu();
 		}
 		break;
 		case 'c':
 		{
-			cout << "sala 3";
+			subMenu();
 		}
 		break;
 		case 'd':
