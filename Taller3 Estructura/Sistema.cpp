@@ -55,7 +55,6 @@ void Sistema::lecturaPeliculas()
 	
 	while (getline(archivoPeliculas, linea))
 	{
-		cout << "aaaaa" << endl;
 		string nombrePelicula;
 		
 
@@ -88,7 +87,8 @@ void Sistema::lecturaPeliculas()
 		transform(nombrePelicula.begin(), nombrePelicula.end(), nombrePelicula.begin(), ::toupper);
 
 		Pelicula* pelicula = new Pelicula(nombrePelicula, duracionHoras, duracionMinutos, generoPelicula, puntajePelicula, clasificacion);
-
+		
+		
 		
 	}
 
