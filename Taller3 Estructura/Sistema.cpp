@@ -53,6 +53,7 @@ void Sistema::lecturaClientes()
 		}
 
 		transform(nombre.begin(), nombre.end(), nombre.begin(), ::toupper);
+		
 
 
 
@@ -64,10 +65,12 @@ void Sistema::lecturaPeliculas()
 {
 	ifstream archivoPeliculas("Peliculas.txt");
 	string linea = "";
-
+	
 	while (getline(archivoPeliculas, linea))
 	{
+		cout << "aaaaa" << endl;
 		string nombrePelicula;
+		
 
 		string duracionHorasAux;
 		int duracionHoras;
@@ -98,6 +101,8 @@ void Sistema::lecturaPeliculas()
 		transform(nombrePelicula.begin(), nombrePelicula.end(), nombrePelicula.begin(), ::toupper);
 
 		Pelicula* pelicula = new Pelicula(nombrePelicula, duracionHoras, duracionMinutos, generoPelicula, puntajePelicula, clasificacion);
+
+		
 	}
 
 	archivoPeliculas.close();
@@ -105,6 +110,10 @@ void Sistema::lecturaPeliculas()
 
 void Sistema::menuPrincipal()
 {
+	//lecturaClientes();
+	lecturaPeliculas();
+
+
 	cout << "____.:Bienvenido al CineRitsa3D:.____" << endl;
 	bool salir = false;
 	string opcionString;
