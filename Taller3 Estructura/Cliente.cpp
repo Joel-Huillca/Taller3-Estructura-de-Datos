@@ -4,7 +4,7 @@ Cliente::Cliente()
 {
 }
 
-Cliente::Cliente(string nombre, string apellido, string rut, string pelicula, int fila, int columna, string sala_Cola)
+Cliente::Cliente(string nombre, string apellido, string rut, string pelicula, int fila, int columna, string salaCola)
 {
 	this->nombre = nombre;
 	this->apellido = apellido;
@@ -12,7 +12,7 @@ Cliente::Cliente(string nombre, string apellido, string rut, string pelicula, in
 	this->pelicula = pelicula;
 	this->fila = fila;
 	this->columna = columna;
-	this->sala_cola = sala_Cola;
+	this->salaCola = salaCola;
 
 }
 
@@ -46,9 +46,9 @@ int Cliente::getColumna()
 	return this->columna;
 }
 
-string Cliente::getSala_cola()
+string Cliente::getSalaCola()
 {
-	return this->sala_cola;
+	return this->salaCola;
 }
 
 string Cliente::setPelicula(string new_pelicula)
@@ -58,7 +58,7 @@ string Cliente::setPelicula(string new_pelicula)
 
 string Cliente::setSala_columna(string new_sala_Columna)
 {
-	return this->sala_cola = new_sala_Columna;
+	return this->salaCola = new_sala_Columna;
 }
 
 int Cliente::setFila(int new_fila)

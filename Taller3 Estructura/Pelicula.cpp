@@ -4,13 +4,13 @@ Pelicula::Pelicula()
 {
 }
 
-Pelicula::Pelicula(string pelicula, int dura_Hora, int dura_Min, string genero, int puntuacion, string clasificacion)
+Pelicula::Pelicula(string pelicula, int duracionHoras, int duracionMinutos, string genero, int puntajePelicula, string clasificacion)
 {
 	this->pelicula = pelicula;
-	this->dura_Hora = dura_Hora;
-	this->dura_Min = dura_Min;
+	this->duracionHoras = duracionHoras;
+	this->duracionMinutos= duracionMinutos;
 	this->genero = genero;
-	this->puntuacion = puntuacion;
+	this->puntuajePelicula = puntajePelicula;
 	this->clasificacion = clasificacion;
 }
 
@@ -19,14 +19,14 @@ string Pelicula::getPelicula()
 	return this->pelicula;
 }
 
-int Pelicula::getDura_Hora()
+int Pelicula::getDuracionHoras()
 {
-	return this->dura_Hora;
+	return this->duracionHoras;
 }
 
-int Pelicula::getDura_Min()
+int Pelicula::getDuracionMinutos()
 {
-	return this->dura_Min;
+	return this->duracionMinutos;
 }
 
 string Pelicula::getGenero()
@@ -34,9 +34,9 @@ string Pelicula::getGenero()
 	return this->genero;
 }
 
-int Pelicula::getPuntuacion()
+int Pelicula::getPuntajePelicula()
 {
-	return this->puntuacion;
+	return this->puntuajePelicula;
 }
 
 string Pelicula::getClasificacion()

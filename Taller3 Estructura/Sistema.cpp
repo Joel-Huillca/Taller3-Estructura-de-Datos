@@ -265,9 +265,13 @@ void Sistema::lecturaClientes()
 		string apellido;
 		string rut;
 		string pelicula;
-		string fila;
-		string columna;
-		string cola;
+
+		string filaAux;
+		int fila;
+
+		string columnaAux;
+		int columna;
+		string salaCola;
 
 		stringstream s(linea);
 
@@ -275,9 +279,12 @@ void Sistema::lecturaClientes()
 		getline(s, apellido, ';');
 		getline(s, rut, ';');
 		getline(s, pelicula, ';');
-		getline(s, fila, ';');
-		getline(s, columna, ';');
-		getline(s, cola, ';');
+		getline(s, filaAux, ';');
+		getline(s, columnaAux, ';');
+		getline(s, salaCola, ';');
+
+		fila = stoi(filaAux);
+		columna = stoi(columnaAux);
 
 		transform(nombre.begin(), nombre.end(), nombre.begin(), ::toupper);
 
@@ -292,20 +299,32 @@ void Sistema::lecturaPeliculas()
 	while (getline(archivoPeliculas, linea))
 	{
 		string nombrePelicula;
-		string duracionHoras;
-		string duracionMinutos;
+
+		string duracionHorasAux;
+		int duracionHoras;
+
+		string duracionMinutosAux;
+		int duracionMinutos;
+
 		string generoPelicula;
-		string puntajePelicula;
+
+		string puntajePeliculaAux;
+		int puntajePelicula;
+
 		string clasificacion;
 
 		stringstream s(linea);
 
 		getline(s, nombrePelicula, '/');
-		getline(s, duracionHoras, '/');
-		getline(s, duracionMinutos, '/');
+		getline(s, duracionHorasAux, '/');
+		getline(s, duracionMinutosAux, '/');
 		getline(s, generoPelicula, '/');
-		getline(s, puntajePelicula, '/');
+		getline(s, puntajePeliculaAux, '/');
 		getline(s, clasificacion, '/');
+
+		duracionHoras = stoi(duracionHorasAux);
+		duracionMinutos = stoi(duracionMinutosAux);
+		puntajePelicula = stoi(puntajePeliculaAux);
 
 		transform(nombrePelicula.begin(), nombrePelicula.end(), nombrePelicula.begin(), ::toupper);
 	}

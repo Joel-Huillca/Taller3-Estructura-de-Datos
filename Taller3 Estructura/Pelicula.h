@@ -6,21 +6,21 @@ class Pelicula
 {
 private:
 	string pelicula;
-	int dura_Hora;
-	int dura_Min;
+	int duracionHoras;
+	int duracionMinutos;
 	string genero;
-	int puntuacion;
+	int puntuajePelicula;
 	string clasificacion;
 
 public:
 	Pelicula();
-	Pelicula(string pelicula, int dura_Hora, int dura_Min, string genero, int puntuacion, string clasificacion);
+	Pelicula(string pelicula, int duracionHoras, int duracionMinutos, string genero, int puntajePelicula, string clasificacion);
 
 	string getPelicula();
-	int getDura_Hora();
-	int getDura_Min();
+	int getDuracionHoras();
+	int getDuracionMinutos();
 	string getGenero();
-	int getPuntuacion();
+	int getPuntajePelicula();
 	string getClasificacion();
 
 

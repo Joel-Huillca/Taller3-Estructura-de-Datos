@@ -12,12 +12,12 @@ private:
 	string pelicula;
 	int fila;
 	int columna;
-	string sala_cola;
+	string salaCola;
 
 
 public:
 	Cliente();
-	Cliente(string nombre, string apellido, string rut, string pelicula, int fila, int columna, string sala_Cola);
+	Cliente(string nombre, string apellido, string rut, string pelicula, int fila, int columna, string salaCola);
 
 /*  Get's  de la clase Cliente  */
 	string getNombre();
@@ -26,7 +26,7 @@ public:
 	string getPelicula();
 	int getFila();
 	int getColumna();
-	string getSala_cola();
+	string getSalaCola();
 
 
 /*  Set's de la clase Cliente
