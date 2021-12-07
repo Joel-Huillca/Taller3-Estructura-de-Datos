@@ -4,6 +4,15 @@ Cliente::Cliente()
 {
 }
 
+Cliente::Cliente(string nombre, string apellido, string rut, string pelicula)
+{
+	this->nombre = nombre;
+	this->apellido = apellido;
+	this->rut = rut;
+	this->pelicula = pelicula;
+	
+}
+
 Cliente::Cliente(string nombre, string apellido, string rut, string pelicula, int fila, int columna, string salaCola)
 {
 	this->nombre = nombre;

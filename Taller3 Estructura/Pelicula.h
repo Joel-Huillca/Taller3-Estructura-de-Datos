@@ -5,7 +5,7 @@ using namespace std;
 class Pelicula
 {
 private:
-	string pelicula;
+	string nombrePelicula;
 	int duracionHoras;
 	int duracionMinutos;
 	string genero;
@@ -14,9 +14,9 @@ private:
 
 public:
 	Pelicula();
-	Pelicula(string pelicula, int duracionHoras, int duracionMinutos, string genero, int puntajePelicula, string clasificacion);
+	Pelicula(string nombrePelicula, int duracionHoras, int duracionMinutos, string genero, int puntajePelicula, string clasificacion);
 
-	string getPelicula();
+	string getNombrePelicula();
 	int getDuracionHoras();
 	int getDuracionMinutos();
 	string getGenero();

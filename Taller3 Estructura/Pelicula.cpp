@@ -4,9 +4,9 @@ Pelicula::Pelicula()
 {
 }
 
-Pelicula::Pelicula(string pelicula, int duracionHoras, int duracionMinutos, string genero, int puntajePelicula, string clasificacion)
+Pelicula::Pelicula(string nombrePelicula, int duracionHoras, int duracionMinutos, string genero, int puntajePelicula, string clasificacion)
 {
-	this->pelicula = pelicula;
+	this->nombrePelicula = nombrePelicula;
 	this->duracionHoras = duracionHoras;
 	this->duracionMinutos= duracionMinutos;
 	this->genero = genero;
@@ -14,9 +14,9 @@ Pelicula::Pelicula(string pelicula, int duracionHoras, int duracionMinutos, stri
 	this->clasificacion = clasificacion;
 }
 
-string Pelicula::getPelicula()
+string Pelicula::getNombrePelicula()
 {
-	return this->pelicula;
+	return this->nombrePelicula;
 }
 
 int Pelicula::getDuracionHoras()

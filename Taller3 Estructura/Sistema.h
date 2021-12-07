@@ -7,12 +7,18 @@
 #include <fstream>
 #include <string>
 #include <cstring>
+#include <queue>
+#include "Cliente.h"
+#include "Pelicula.h"
 
 
 using namespace std;
 
 class Sistema
 {
+private:
+	queue<Cliente> cola;
+	Pelicula* pelicula;
 public:
 	Sistema();
 	~Sistema();

@@ -9,6 +9,86 @@ Sistema::~Sistema()
 {
 
 }
+void Sistema::lecturaClientes()
+{
+	ifstream archivoClientes("Clientes.txt");
+	string linea = "";
+
+	while (getline(archivoClientes, linea))
+	{
+		string nombre;
+		string apellido;
+		string rut;
+		string pelicula;
+
+		string filaAux;
+		int fila;
+
+		string columnaAux;
+		int columna;
+		string salaCola;
+
+		stringstream s(linea);
+
+		getline(s, nombre, ';');
+		getline(s, apellido, ';');
+		getline(s, rut, ';');
+		getline(s, pelicula, ';');
+		getline(s, filaAux, ';');
+		getline(s, columnaAux, ';');
+		getline(s, salaCola, ';');
+
+		fila = stoi(filaAux);
+		columna = stoi(columnaAux);
+
+		transform(nombre.begin(), nombre.end(), nombre.begin(), ::toupper);
+
+	}
+	archivoClientes.close();
+}
+
+void Sistema::lecturaPeliculas()
+{
+	ifstream archivoPeliculas("Peliculas.txt");
+	string linea = "";
+
+	while (getline(archivoPeliculas, linea))
+	{
+		string nombrePelicula;
+
+		string duracionHorasAux;
+		int duracionHoras;
+
+		string duracionMinutosAux;
+		int duracionMinutos;
+
+		string generoPelicula;
+
+		string puntajePeliculaAux;
+		int puntajePelicula;
+
+		string clasificacion;
+
+		stringstream s(linea);
+
+		getline(s, nombrePelicula, '/');
+		getline(s, duracionHorasAux, '/');
+		getline(s, duracionMinutosAux, '/');
+		getline(s, generoPelicula, '/');
+		getline(s, puntajePeliculaAux, '/');
+		getline(s, clasificacion, '/');
+
+		duracionHoras = stoi(duracionHorasAux);
+		duracionMinutos = stoi(duracionMinutosAux);
+		puntajePelicula = stoi(puntajePeliculaAux);
+
+		transform(nombrePelicula.begin(), nombrePelicula.end(), nombrePelicula.begin(), ::toupper);
+
+		Pelicula* pelicula = new Pelicula(nombrePelicula, duracionHoras, duracionMinutos, generoPelicula, puntajePelicula, clasificacion);
+	}
+
+	archivoPeliculas.close();
+}
 
 void Sistema::menuPrincipal()
 {
@@ -56,6 +136,7 @@ void Sistema::menuPrincipal()
 		break;
 		case 'd':
 			salir = true;
+			//generar un archivo de salida
 			cout << "\n\n ------------------------------------- \n|Hasta luego y GRACIAS por preferirnos|\n|	    Cine Ritsa 3D	      |\n ------------------------------------- \n";// _____________________________________ 
 		}
 	}
@@ -132,24 +213,60 @@ void Sistema::menuFilaEspera()
 	{
 		case 'a':
 		{
-			cout << "atendiendo fila";
+			cout << "atendiendo fila...";
 		}
-			break;
+		break;
 		case 'b':
 		{
-			cout << "agregando personas";
+			try
+			{
+				cout << "Ingrese nombre del cliente ha agregar: ";
+				string nombre;
+				cin >> nombre;
+				cout << "Ingrese apellido del cliente ha agregar: ";
+				string apellido;
+				cin >> apellido;
+				cout << "Ingrese rut del cliente ha agregar: ";
+				string rut;
+				cin >> rut;
+				cout << "Ingrese pelicula que desea ver el cliente: ";
+				string pelicula;
+				cin >> pelicula;
+				//cout << nombre << apellido << rut << pelicula;
+				lecturaPeliculas();
+				if (this->pelicula->getNombrePelicula() == nombre)
+				{
+					Cliente* cliente = new Cliente(nombre, apellido, rut, pelicula);
+					cola.push(*cliente);
+				}
+				else
+				{
+					cout << "El cine no registra la pelicula" << endl;
+					menuFilaEspera();
+				}
+			}
+			catch (const std::exception&)
+			{
+				cout << "Datos ingresados no validos"<<endl;
+				menuFilaEspera();	
+			}
 		}
-			break;
+		break;
 		case 'c':
 		{
-			cout << "vaciando fila";
+			cout << "Vaciando fila...";
+			while (!cola.empty())
+			{
+				cola.pop();
+			}
+			menuFilaEspera();
 		}
-			break;
+		break;
 		case 'd':
 		{
 			cout << "Saliendo del menu fila de espera..."<<endl;
 		}
-			break;
+		break;
 	}
 }
 
@@ -252,80 +369,6 @@ void Sistema::menuEstadisticas()
 	}
 }
 
-void Sistema::lecturaClientes()
-{
-	ifstream archivoClientes("Clientes.txt");
-	string linea = "";
 
-	while (getline(archivoClientes, linea))
-	{
-		string nombre;
-		string apellido;
-		string rut;
-		string pelicula;
-
-		string filaAux;
-		int fila;
-
-		string columnaAux;
-		int columna;
-		string salaCola;
-
-		stringstream s(linea);
-
-		getline(s, nombre, ';');
-		getline(s, apellido, ';');
-		getline(s, rut, ';');
-		getline(s, pelicula, ';');
-		getline(s, filaAux, ';');
-		getline(s, columnaAux, ';');
-		getline(s, salaCola, ';');
-
-		fila = stoi(filaAux);
-		columna = stoi(columnaAux);
-
-		transform(nombre.begin(), nombre.end(), nombre.begin(), ::toupper);
-
-	}
-}
-
-void Sistema::lecturaPeliculas()
-{
-	ifstream archivoPeliculas("Peliculas.txt");
-	string linea = "";
-
-	while (getline(archivoPeliculas, linea))
-	{
-		string nombrePelicula;
-
-		string duracionHorasAux;
-		int duracionHoras;
-
-		string duracionMinutosAux;
-		int duracionMinutos;
-
-		string generoPelicula;
-
-		string puntajePeliculaAux;
-		int puntajePelicula;
-
-		string clasificacion;
-
-		stringstream s(linea);
-
-		getline(s, nombrePelicula, '/');
-		getline(s, duracionHorasAux, '/');
-		getline(s, duracionMinutosAux, '/');
-		getline(s, generoPelicula, '/');
-		getline(s, puntajePeliculaAux, '/');
-		getline(s, clasificacion, '/');
-
-		duracionHoras = stoi(duracionHorasAux);
-		duracionMinutos = stoi(duracionMinutosAux);
-		puntajePelicula = stoi(puntajePeliculaAux);
-
-		transform(nombrePelicula.begin(), nombrePelicula.end(), nombrePelicula.begin(), ::toupper);
-	}
-}
 
 

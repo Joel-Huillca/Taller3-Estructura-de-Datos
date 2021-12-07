@@ -17,6 +17,7 @@ private:
 
 public:
 	Cliente();
+	Cliente(string nombre, string apellido, string rut, string pelicula);
 	Cliente(string nombre, string apellido, string rut, string pelicula, int fila, int columna, string salaCola);
 
 /*  Get's  de la clase Cliente  */

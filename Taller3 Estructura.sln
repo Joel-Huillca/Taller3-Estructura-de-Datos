@@ -5,6 +5,12 @@ VisualStudioVersion = 16.0.31515.178
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Taller3 Estructura", "Taller3 Estructura\Taller3 Estructura.vcxproj", "{317504BF-92C6-46B9-A7B3-87F1D679C9A1}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C949E9DA-64EC-4875-9E1D-95F90A4858C1}"
+	ProjectSection(SolutionItems) = preProject
+		Clientes.txt = Clientes.txt
+		Peliculas.txt = Peliculas.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
