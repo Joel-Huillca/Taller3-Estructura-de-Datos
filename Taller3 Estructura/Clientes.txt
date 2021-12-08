@@ -1,5 +1,5 @@
 Juan; Sanchez; 21.934.925-2; The Butterfly Effect; 9; 29; S
-Paola; Correa; 18.434.333-1; Kung Fury; 3; 22; C
+Paola; Correa; 18.434.333-1; Kung Fury; 3; 22; 
 Natalia; Gutiérrez; 5.897.771-K; Brother Bear; 20; 14; C
 Diana; Lopez; 8.439.245-9; Spiderman: No Way Home; 20; 23; S
 Carolina; Pinzon; 7.110.828-9; Spiderman: No Way Home; 14; 13; C

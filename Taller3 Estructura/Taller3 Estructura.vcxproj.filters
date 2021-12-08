@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Archivos de recursos\Archivos UCN _-_">
+      <UniqueIdentifier>{34485556-246e-4adf-ba15-2bb1a5d6bcec}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Taller3 Estructura.cpp">
@@ -62,5 +65,20 @@
     <ClInclude Include="NodoAVL.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\..\Taller 3\Enunciado Taller 3.pdf">
+      <Filter>Archivos de recursos\Archivos UCN _-_</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Peliculas - copia.txt">
+      <Filter>Archivos de recursos\Archivos UCN _-_</Filter>
+    </Text>
+    <Text Include="Peliculas.txt" />
+    <Text Include="Clientes - copia.txt">
+      <Filter>Archivos de recursos\Archivos UCN _-_</Filter>
+    </Text>
+    <Text Include="Clientes.txt" />
   </ItemGroup>
 </Project>

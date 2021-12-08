@@ -9,6 +9,7 @@ Sistema::~Sistema()
 {
 
 }
+
 void Sistema::lecturaClientes()
 {
 	ifstream archivoClientes("Clientes.txt");
@@ -50,20 +51,21 @@ void Sistema::lecturaClientes()
 		//Pasar de string a int:
 		fila = stoi(filaAux);
 		columna = stoi(columnaAux);
-
 		
 		if (salaCola._Equal("C"))
 		{
+			//Se dirigen a la Cola de Espera:
 			Cliente* cliente = new Cliente(nombre, apellido, rut, pelicula, fila, columna, salaCola);
 			cola.push(*cliente);
 		}
 		else
 		{
-			Cliente* cliente = new Cliente(nombre, apellido, rut, pelicula, fila, columna, salaCola);
-			cola_Esp.push(*cliente);
+			agregaMpp();
+			//Cliente* cliente = new Cliente(nombre, apellido, rut, pelicula, fila, columna, salaCola);
+			//cola_Esp.push(*cliente);
 		}
 
-		//Pasar todo a mismo tamaño de Letra:
+		//Pasar todo a mismo tamaño de Letra (MAYUSCULA):
 		transform(nombre.begin(), nombre.end(), nombre.begin(), ::toupper);
 		
 		
@@ -77,6 +79,16 @@ void Sistema::lecturaClientes()
 	
 }
 
+void agregaMpp() 
+{
+	/*
+	if(columna < 5 && fila % 4 != 0 && fila + columna % 2 = 0 || columna > 26 && fila % 4 != 0 && fila + columna % 2 = 0 || columna > 7 && columna < 26 && fila % 4 != 0 && fila + columna % 2 != 0)
+	{
+	    //[es verde]
+	}
+		*/
+}
+
 void Sistema::lecturaPeliculas()
 {
 	ifstream archivoPeliculas("Peliculas.txt");
@@ -86,7 +98,6 @@ void Sistema::lecturaPeliculas()
 	{
 		string nombrePelicula;
 		
-
 		string duracionHorasAux;
 		int duracionHoras;
 
@@ -112,10 +123,13 @@ void Sistema::lecturaPeliculas()
 		duracionHoras = stoi(duracionHorasAux);
 		duracionMinutos = stoi(duracionMinutosAux);
 		puntajePelicula = stoi(puntajePeliculaAux);
-
-		transform(nombrePelicula.begin(), nombrePelicula.end(), nombrePelicula.begin(), ::toupper);
+		
+		//Coloca el dato en Mayuscula:
+		//transform(nombrePelicula.begin(), nombrePelicula.end(), nombrePelicula.begin(), ::toupper);
 
 		Pelicula* pelicula = new Pelicula(nombrePelicula, duracionHoras, duracionMinutos, generoPelicula, puntajePelicula, clasificacion);
+		
+		
 		
 	}
 
@@ -125,8 +139,7 @@ void Sistema::lecturaPeliculas()
 void Sistema::menuPrincipal()
 {
 	lecturaClientes();
-	//lecturaPeliculas();
-
+	lecturaPeliculas();
 
 	cout << "____.:Bienvenido al CineRitsa3D:.____" << endl;
 	bool salir = false;
