@@ -7,11 +7,11 @@
 int main()
 {   
     Sistema* sistema = new Sistema;
-   // sistema->menuPrincipal();
-
+    sistema->menuPrincipal();
+    /*
     Pelicula* pelicula = new Pelicula;
     string nombrePeli = pelicula->getNombrePelicula();
-    cout << nombrePeli;
+    cout << nombrePeli;*/
 }
 
 

@@ -19,6 +19,7 @@ class Sistema
 {
 private:
 	queue<Cliente> cola;
+	queue<Cliente> cola_Esp;
 	Pelicula* pelicula;
 	Cliente* cliente;
 public:

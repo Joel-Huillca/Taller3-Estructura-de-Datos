@@ -13,7 +13,7 @@ void Sistema::lecturaClientes()
 {
 	ifstream archivoClientes("Clientes.txt");
 	string linea = "";
-
+	
 	while (getline(archivoClientes, linea))
 	{
 		string nombre;
@@ -38,27 +38,43 @@ void Sistema::lecturaClientes()
 		getline(s, columnaAux, ';');
 		getline(s, salaCola, ';');
 
+		//Retirar los Espacios vacios del txt
+		nombre.erase(remove(nombre.begin(), nombre.end(), ' '), nombre.end());
+		apellido.erase(remove(apellido.begin(), apellido.end(), ' '), apellido.end());
+		rut.erase(remove(rut.begin(), rut.end(), ' '), rut.end());
+		pelicula.erase(remove(pelicula.begin(), pelicula.end(), ' '), pelicula.end());
+		filaAux.erase(remove(filaAux.begin(), filaAux.end(), ' '), filaAux.end());
+		columnaAux.erase(remove(columnaAux.begin(), columnaAux.end(), ' '), columnaAux.end());
+		salaCola.erase(remove(salaCola.begin(), salaCola.end(), ' '), salaCola.end());
+		
+		//Pasar de string a int:
 		fila = stoi(filaAux);
 		columna = stoi(columnaAux);
 
-		if (salaCola == "C")
+		
+		if (salaCola._Equal("C"))
 		{
-			
 			Cliente* cliente = new Cliente(nombre, apellido, rut, pelicula, fila, columna, salaCola);
 			cola.push(*cliente);
 		}
 		else
 		{
-			cout << "se agrega a la sala de cine";
+			Cliente* cliente = new Cliente(nombre, apellido, rut, pelicula, fila, columna, salaCola);
+			cola_Esp.push(*cliente);
 		}
 
+		//Pasar todo a mismo tamaño de Letra:
 		transform(nombre.begin(), nombre.end(), nombre.begin(), ::toupper);
 		
-
-
+		
 
 	}
 	archivoClientes.close();
+
+	//Comprobamos -Todo correcto:
+	//cout << cola.front().getNombre() <<cola.front().getRut()<< endl;
+	//cout << cola_Esp.front().getNombre() <<cola_Esp.front().getRut()<< endl;
+	
 }
 
 void Sistema::lecturaPeliculas()
@@ -101,8 +117,6 @@ void Sistema::lecturaPeliculas()
 
 		Pelicula* pelicula = new Pelicula(nombrePelicula, duracionHoras, duracionMinutos, generoPelicula, puntajePelicula, clasificacion);
 		
-		
-		
 	}
 
 	archivoPeliculas.close();
@@ -110,8 +124,8 @@ void Sistema::lecturaPeliculas()
 
 void Sistema::menuPrincipal()
 {
-	//lecturaClientes();
-	lecturaPeliculas();
+	lecturaClientes();
+	//lecturaPeliculas();
 
 
 	cout << "____.:Bienvenido al CineRitsa3D:.____" << endl;
