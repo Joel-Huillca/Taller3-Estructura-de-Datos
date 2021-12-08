@@ -10,6 +10,8 @@
 #include <queue>
 #include "Cliente.h"
 #include "Pelicula.h"
+#include "MatrizPP.h"
+#include "ArbolAvl.h"
 
 
 using namespace std;
@@ -21,6 +23,8 @@ private:
 	queue<Cliente> cola_Esp;
 	Pelicula* pelicula;
 	Cliente* cliente;
+	MatrizPP* mpp;
+	
 public:
 	Sistema();
 	~Sistema();

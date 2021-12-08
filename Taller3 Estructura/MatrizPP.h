@@ -24,5 +24,7 @@ public:
 	int getColumnas();
 	NodoMpp* getAROW();
 	NodoMpp* getACOL();
+
+	void agregaMpp(Cliente* cliente,int fila,int columna);
 };
 

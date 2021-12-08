@@ -1,4 +1,5 @@
 #pragma once
+#include "MatrizPP.h"
 class NodoMpp
 {
 private:
@@ -6,22 +7,19 @@ private:
 	NodoMpp* up;
 	int fila;
 	int columna;
-	char tipo;
+	Cliente* cliente;
 public:
 
 	NodoMpp();
 
-	NodoMpp(int fila, int columna);//  ?
-
-	NodoMpp(int fila, int columna, char tipo);
-
+	NodoMpp(Cliente* cliente,int fila, int columna);
 	
 
 	NodoMpp* getLeft();
 	NodoMpp* getUp();
 	int getFila();
 	int getColumna();
-	char getTipo();
+	Cliente* getCliente();
 
 	void setLeft(NodoMpp* nodo);
 	void setUp(NodoMpp* nodo);

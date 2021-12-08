@@ -24,7 +24,7 @@
     <ClCompile Include="Sistema.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="Mpp.cpp">
+    <ClCompile Include="MatrizPP.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
     <ClCompile Include="ArbolAvl.cpp">
@@ -47,7 +47,7 @@
     <ClInclude Include="Sistema.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="Mpp.h">
+    <ClInclude Include="MatrizPP.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="ArbolAvl.h">

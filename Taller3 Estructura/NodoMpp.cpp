@@ -5,21 +5,17 @@ NodoMpp::NodoMpp()
 	this->up = this;
 	this->fila = 0;
 	this->columna = 0;
-	this->tipo = ' ';
+	this->cliente = nullptr;
 }
-NodoMpp::NodoMpp(int fila, int columna)
-{
-}
-
-NodoMpp::NodoMpp(int fila, int columna, char tipo)
+NodoMpp::NodoMpp(Cliente* cliente,int fila, int columna)
 {
 	this->left = nullptr;
 	this->up = nullptr;
+	this->cliente = cliente;
 	this->fila = fila;
 	this->columna = columna;
-	this->tipo = tipo;
+	
 }
-
 
 NodoMpp* NodoMpp::getLeft()
 {
@@ -41,9 +37,9 @@ int NodoMpp::getColumna()
 	return this->columna;
 }
 
-char NodoMpp::getTipo()
+Cliente* NodoMpp::getCliente()
 {
-	return this->tipo;
+	return this->cliente;
 }
 
 void NodoMpp::setLeft(NodoMpp* nodo)

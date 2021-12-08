@@ -141,7 +141,7 @@
   <ItemGroup>
     <ClCompile Include="ArbolAvl.cpp" />
     <ClCompile Include="Cliente.cpp" />
-    <ClCompile Include="Mpp.cpp" />
+    <ClCompile Include="MatrizPP.cpp" />
     <ClCompile Include="NodoAVL.cpp" />
     <ClCompile Include="NodoMpp.cpp" />
     <ClCompile Include="Pelicula.cpp" />
@@ -151,7 +151,7 @@
   <ItemGroup>
     <ClInclude Include="ArbolAvl.h" />
     <ClInclude Include="Cliente.h" />
-    <ClInclude Include="Mpp.h" />
+    <ClInclude Include="MatrizPP.h" />
     <ClInclude Include="NodoAVL.h" />
     <ClInclude Include="NodoMpp.h" />
     <ClInclude Include="Pelicula.h" />

@@ -47,6 +47,9 @@ void Sistema::lecturaClientes()
 		filaAux.erase(remove(filaAux.begin(), filaAux.end(), ' '), filaAux.end());
 		columnaAux.erase(remove(columnaAux.begin(), columnaAux.end(), ' '), columnaAux.end());
 		salaCola.erase(remove(salaCola.begin(), salaCola.end(), ' '), salaCola.end());
+
+		//Pasar todo a mismo tamaño de Letra (MAYUSCULA):
+		transform(nombre.begin(), nombre.end(), nombre.begin(), ::toupper);
 		
 		//Pasar de string a int:
 		fila = stoi(filaAux);
@@ -60,13 +63,11 @@ void Sistema::lecturaClientes()
 		}
 		else
 		{
-			agregaMpp();
+			//Se agregan a la matriz
+			mpp->agregaMpp(cliente, fila, columna);
 			//Cliente* cliente = new Cliente(nombre, apellido, rut, pelicula, fila, columna, salaCola);
 			//cola_Esp.push(*cliente);
 		}
-
-		//Pasar todo a mismo tamaño de Letra (MAYUSCULA):
-		transform(nombre.begin(), nombre.end(), nombre.begin(), ::toupper);
 		
 		
 
@@ -77,16 +78,6 @@ void Sistema::lecturaClientes()
 	//cout << cola.front().getNombre() <<cola.front().getRut()<< endl;
 	//cout << cola_Esp.front().getNombre() <<cola_Esp.front().getRut()<< endl;
 	
-}
-
-void agregaMpp() 
-{
-	/*
-	if(columna < 5 && fila % 4 != 0 && fila + columna % 2 = 0 || columna > 26 && fila % 4 != 0 && fila + columna % 2 = 0 || columna > 7 && columna < 26 && fila % 4 != 0 && fila + columna % 2 != 0)
-	{
-	    //[es verde]
-	}
-		*/
 }
 
 void Sistema::lecturaPeliculas()
@@ -128,9 +119,7 @@ void Sistema::lecturaPeliculas()
 		//transform(nombrePelicula.begin(), nombrePelicula.end(), nombrePelicula.begin(), ::toupper);
 
 		Pelicula* pelicula = new Pelicula(nombrePelicula, duracionHoras, duracionMinutos, generoPelicula, puntajePelicula, clasificacion);
-		
-		
-		
+				
 	}
 
 	archivoPeliculas.close();
