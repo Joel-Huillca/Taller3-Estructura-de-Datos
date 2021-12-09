@@ -8,7 +8,6 @@
 #include <string>
 #include <cstring>
 #include <queue>
-#include "Cliente.h"
 #include "Pelicula.h"
 #include "MatrizPP.h"
 #include "ArbolAvl.h"
@@ -23,7 +22,8 @@ private:
 	queue<Cliente> cola_Esp;
 	Pelicula* pelicula;
 	Cliente* cliente;
-	MatrizPP* mpp;
+	MatrizPP* mpp = new MatrizPP(20,30);
+	
 	
 public:
 	Sistema();
@@ -42,5 +42,7 @@ public:
 	void lecturaClientes();
 
 	void lecturaPeliculas();
+
+	//void agregaMpp(Cliente* cliente, int fila, int columna);
 };
 

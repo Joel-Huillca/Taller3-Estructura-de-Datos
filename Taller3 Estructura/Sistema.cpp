@@ -14,7 +14,6 @@ void Sistema::lecturaClientes()
 {
 	ifstream archivoClientes("Clientes.txt");
 	string linea = "";
-	
 	while (getline(archivoClientes, linea))
 	{
 		string nombre;
@@ -48,13 +47,10 @@ void Sistema::lecturaClientes()
 		columnaAux.erase(remove(columnaAux.begin(), columnaAux.end(), ' '), columnaAux.end());
 		salaCola.erase(remove(salaCola.begin(), salaCola.end(), ' '), salaCola.end());
 
-		//Pasar todo a mismo tamaño de Letra (MAYUSCULA):
-		transform(nombre.begin(), nombre.end(), nombre.begin(), ::toupper);
-		
 		//Pasar de string a int:
 		fila = stoi(filaAux);
 		columna = stoi(columnaAux);
-		
+
 		if (salaCola._Equal("C"))
 		{
 			//Se dirigen a la Cola de Espera:
@@ -66,18 +62,12 @@ void Sistema::lecturaClientes()
 			//Se agregan a la matriz
 			Cliente* cliente = new Cliente(nombre, apellido, rut, pelicula, fila, columna, salaCola);
 			mpp->agregaMpp(cliente, fila, columna);
-			//cola_Esp.push(*cliente);
 		}
-		
-		
-
 	}
 	archivoClientes.close();
-
 	//Comprobamos -Todo correcto:
 	//cout << cola.front().getNombre() <<cola.front().getRut()<< endl;
 	//cout << cola_Esp.front().getNombre() <<cola_Esp.front().getRut()<< endl;
-	
 }
 
 void Sistema::lecturaPeliculas()
@@ -124,6 +114,37 @@ void Sistema::lecturaPeliculas()
 
 	archivoPeliculas.close();
 }
+
+/*void Sistema::agregaMpp(Cliente* cliente, int fila, int columna)
+{
+	if (columna < 5 && fila % 4 != 0 && (fila + columna) % 2 == 0 || columna > 26 && fila % 4 != 0 && (fila + columna) % 2 == 0 || columna > 7 && columna < 24 && fila % 4 != 0 && (fila + columna) % 2 != 0)
+	{
+		NodoMpp* nodoMpp = new NodoMpp(cliente, fila, columna);
+
+		NodoMpp* aux = &mpp->getAROW()[fila];
+		while (aux->getLeft()->getColumna() > 0 && aux->getLeft()->getColumna() > columna)
+		{
+			if (aux->getLeft()->getColumna() == columna) {  // ya esta ocupado
+				return;
+			}
+			aux = aux->getLeft();
+		}
+		nodoMpp->setLeft(aux->getLeft());
+		aux->setLeft(nodoMpp);
+
+		NodoMpp* aux2 = &mpp->getACOL()[columna];
+		while (aux2->getUp()->getFila() > 0 && aux2->getUp()->getFila() > fila)
+		{
+			aux2 = aux2->getUp();
+		}
+		nodoMpp->setLeft(aux2->getUp());
+		aux2->setUp(nodoMpp);
+	}
+	else
+	{
+		cout << "no es valido";
+	}
+}*/
 
 void Sistema::menuPrincipal()
 {

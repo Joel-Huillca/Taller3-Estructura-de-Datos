@@ -1,9 +1,6 @@
 
 #include "MatrizPP.h"
-#include <iostream>
-#include <string>
 
-using namespace std;
 MatrizPP::MatrizPP()
 {
 	this->filas = 0;
@@ -24,8 +21,8 @@ MatrizPP::~MatrizPP()
 {
 }
 
-void MatrizPP::imprimir()
-{
+//void MatrizPP::imprimir()
+//{
 	/*
 	for (int i=1; i<=filas; i++) 
 	{
@@ -55,7 +52,7 @@ void MatrizPP::imprimir()
 		cout << fila << endl;
 	}
 	*/
-}
+//}
 
 
 
@@ -79,34 +76,33 @@ NodoMpp* MatrizPP::getACOL()
 	return ACOL;
 }
 
-void MatrizPP::agregaMpp(Cliente* cliente, int fila, int columna)
+ void MatrizPP::agregaMpp(Cliente* cliente, int fila, int columna)
 {
-	if (columna < 5 && fila % 4 != 0 && (fila + columna) % 2 == 0 || columna > 26 && fila % 4 != 0 && (fila + columna) % 2 == 0 || columna > 7 && columna < 24 && fila % 4 != 0 && (fila + columna) % 2 != 0)
-	{
-		NodoMpp* nodoMpp = new NodoMpp(cliente, fila, columna);
+	 if (columna < 5 && fila % 4 != 0 && (fila + columna) % 2 == 0 || columna > 26 && fila % 4 != 0 && (fila + columna) % 2 == 0 || columna > 7 && columna < 24 && fila % 4 != 0 && (fila + columna) % 2 != 0)
+	 {
+		 NodoMpp* nodoMpp = new NodoMpp(cliente, fila, columna);
+		 NodoMpp* aux = &AROW[fila];
+		 while (aux->getLeft()->getColumna() > 0 && aux->getLeft()->getColumna() > columna)
+		 {
+			 if (aux->getLeft()->getColumna() == columna) {  // ya esta ocupado
+				 return;
+			 }
+			 aux = aux->getLeft();
+		 }
+		 nodoMpp->setLeft(aux->getLeft());
+		 aux->setLeft(nodoMpp);
 
-		NodoMpp* aux = &AROW[fila];
-		while (aux->getLeft()->getColumna() > 0 && aux->getLeft()->getColumna() > columna)
-		{
-			if (aux->getLeft()->getColumna() == columna) {  // ya esta ocupado
-				return;
-			}
-			aux = aux->getLeft();
-		}
-		nodoMpp->setLeft(aux->getLeft());
-		aux->setLeft(nodoMpp);
-
-		NodoMpp* aux2 = &ACOL[columna];
-		while (aux2->getUp()->getFila() > 0 && aux2->getUp()->getFila() > fila)
-		{
-			aux2 = aux2->getUp();
-		}
-		nodoMpp->setLeft(aux2->getUp());
-		aux2->setUp(nodoMpp);
-	}
-	else
-	{
-		cout << "no es valido";
-	}
+		 NodoMpp* aux2 = &ACOL[columna];
+		 while (aux2->getUp()->getFila() > 0 && aux2->getUp()->getFila() > fila)
+		 {
+			 aux2 = aux2->getUp();
+		 }
+		 nodoMpp->setLeft(aux2->getUp());
+		 aux2->setUp(nodoMpp);
+	 }
+	 else
+	 {
+		 cout << "no es valido";
+	 }
 }
 

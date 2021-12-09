@@ -1,5 +1,5 @@
 Juan; Sanchez; 21.934.925-2; The Butterfly Effect; 9; 29; S
-Paola; Correa; 18.434.333-1; Kung Fury; 3; 22; 
+Paola; Correa; 18.434.333-1; Kung Fury; 3; 22; C
 Natalia; Gutiérrez; 5.897.771-K; Brother Bear; 20; 14; C
 Diana; Lopez; 8.439.245-9; Spiderman: No Way Home; 20; 23; S
 Carolina; Pinzon; 7.110.828-9; Spiderman: No Way Home; 14; 13; C
@@ -76,6 +76,20 @@ Gloria; Mendoza; 14.857.433-8; Spiderman: No Way Home; 12; 20; C
 Adriana; Rey; 7.229.067-2; John Wick; 9; 27; S
 Oscar; Ulloa; 20.537.155-K; Kung Fury; 9; 20; C
 Angela; Mahecha; 18.872.288-2; JR7, The Biography; 7; 24; C
+Claudia; Torres; 17.720.670-K; The Reinaldo's Fallen; 20; 21; S
+Laura; Varon; 1.307.251-8; Finding Nemo; 12; 24; S
+Olga; Ovalle; 14.061.764-1; Scarface; 11; 17; S
+Maria; Cervantes; 1.327.334-4; The Lorax; 2; 7; S
+Carol; Gomez; 16.961.170-7; JR7, The Biography; 7; 23; C
+Laura; Lagos; 19.447.960-K; Spiderman: No Way Home; 18; 3; C
+Marcela; Rueda; 5.237.773-5; The Machinist; 1; 19; C
+Andres; Villa; 5.973.505-3; John Wick; 10; 23; C
+Laura; Puerto; 16.376.029-9; The Machinist; 9; 9; C
+Juan; Ortega; 6.213.753-5; The Reinaldo's Fallen; 4; 17; S
+Maria; Horta; 6.268.447-9; Spiderman: No Way Home; 19; 6; C
+Jorge; Orozco; 4.198.677-1; John Wick; 20; 24; C
+Estewil; Quesada; 19.692.757-3; The Reinaldo's Fallen; 10; 11; S
+Cinthya; Dussán; 11.758.377-7; The Wolf Of Wall Street; 20; 25; C
 Claudia; Torres; 17.720.670-K; The Reinaldo's Fallen; 20; 21; S
 Laura; Varon; 1.307.251-8; Finding Nemo; 12; 24; S
 Olga; Ovalle; 14.061.764-1; Scarface; 11; 17; S
