@@ -8,6 +8,7 @@
 #include <string>
 #include <cstring>
 #include <queue>
+#include <ostream>
 #include "Pelicula.h"
 #include "MatrizPP.h"
 #include "ArbolAvl.h"
