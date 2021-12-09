@@ -64,8 +64,8 @@ void Sistema::lecturaClientes()
 		else
 		{
 			//Se agregan a la matriz
+			Cliente* cliente = new Cliente(nombre, apellido, rut, pelicula, fila, columna, salaCola);
 			mpp->agregaMpp(cliente, fila, columna);
-			//Cliente* cliente = new Cliente(nombre, apellido, rut, pelicula, fila, columna, salaCola);
 			//cola_Esp.push(*cliente);
 		}
 		
@@ -252,6 +252,7 @@ void Sistema::menuFilaEspera()
 		case 'a':
 		{
 			cout << "atendiendo fila...";
+			//mpp->imprimirMpp();
 		}
 		break;
 		case 'b':
