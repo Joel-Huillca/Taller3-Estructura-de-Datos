@@ -61,7 +61,7 @@ void Sistema::lecturaClientes()
 		{
 			//Se agregan a la matriz
 			Cliente* cliente = new Cliente(nombre, apellido, rut, pelicula, fila, columna, salaCola);
-			mpp->agregaMpp(cliente, fila, columna);
+			//mpp->agregaMpp(cliente, fila, columna);
 		}
 	}
 	archivoClientes.close();
@@ -202,14 +202,14 @@ void Sistema::menuPrincipal()
 	
 }
 
-bool Sistema::subMenu()
+char Sistema::subMenu()
 {
 	bool salir = false;
 	string opcionString;
 	char op1;
 	while (salir == false)
 	{
-		cout << "\n  ****|Sub-Menu|****\n  a) Revisar pelicula\n  b) Asignar pelicula\n  c) Iniciar Pelicula\n  d) Volver\n  Elija una opcion: ";
+		cout << "\n  a) Revisar pelicula\n  b) Asignar pelicula\n  c) Iniciar Pelicula\n  d) Volver\n  Elija una opcion: ";
 		cin >> opcionString;
 
 		while (!opcionString._Equal("a") && !opcionString._Equal("b") && !opcionString._Equal("c") && !opcionString._Equal("d"))
@@ -228,20 +228,15 @@ bool Sistema::subMenu()
 		{
 			case 'a':
 			{
-				cout << "\nLa pelicula es: xxxxxxxxxxxxx"<<endl;
-				return true;
+				return 'a';
 			}
 			case 'b':
 			{
-				string pelicula;
-				cout << "Ingrese la pelicula:";
-				cin >> pelicula;
-				return true;
+				return 'b';
 			}
 			case 'c':
 			{
-				cout << "\nIniciando pelicula....\n";
-				return true;
+				return 'c';
 			}
 			case 'd':
 				return false;
@@ -343,17 +338,56 @@ void Sistema::menuSalaCine()
 	{
 		case 'a':
 		{
-			subMenu();
+			cout << "\n  ****|Sub-Menu|****\n °Sala 1 °"<<endl;
+			char opSubMenu = subMenu();
+			if (opSubMenu == 'a')
+			{
+				cout << "revisando pelicula sala 1";
+			}
+			if (opSubMenu == 'b')
+			{
+				cout << "asignando pelicula sala 1";
+			}
+			if (opSubMenu == 'c')
+			{
+				cout << "iniciando pelicula sala 1";
+			}			
 		}
 		break;
 		case 'b':
 		{
-			subMenu();
+			cout << "\n  ****|Sub-Menu|****\n °Sala 2 °" << endl;
+			char opSubMenu = subMenu();
+			if (opSubMenu == 'a')
+			{
+				cout << "revisando pelicula sala 2";
+			}
+			if (opSubMenu == 'b')
+			{
+				cout << "asignando pelicula sala 2";
+			}
+			if (opSubMenu == 'c')
+			{
+				cout << "iniciando pelicula sala 2";
+			}
 		}
 		break;
 		case 'c':
 		{
-			subMenu();
+			cout << "\n  ****|Sub-Menu|****\n °Sala 3 °" << endl;
+			char opSubMenu = subMenu();
+			if (opSubMenu == 'a')
+			{
+				cout << "revisando pelicula sala 3";
+			}
+			if (opSubMenu == 'b')
+			{
+				cout << "asignando pelicula sala 3";
+			}
+			if (opSubMenu == 'c')
+			{
+				cout << "iniciando pelicula sala 3";
+			}
 		}
 		break;
 		case 'd':

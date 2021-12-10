@@ -23,7 +23,9 @@ private:
 	queue<Cliente> cola_Esp;
 	Pelicula* pelicula;
 	Cliente* cliente;
-	MatrizPP* mpp = new MatrizPP(20,30);
+	MatrizPP* sala1 = new MatrizPP(20,30);
+	MatrizPP* sala2 = new MatrizPP(20,30);
+	MatrizPP* sala3 = new MatrizPP(20,30);
 	
 	
 public:
@@ -32,7 +34,7 @@ public:
 
 	void menuPrincipal();
 
-	bool subMenu();
+	char subMenu();
 
 	void menuFilaEspera();
 
