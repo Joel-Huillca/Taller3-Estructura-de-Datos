@@ -28,7 +28,7 @@ MatrizPP::~MatrizPP()
 //void MatrizPP::imprimir()
 //{
 	/*
-	for (int i=1; i<=filas; i++) 
+	for (int i=1; i<=filas; i++)
 	{
 		string fila;
 		NodoMpp*aux = AROW[i].getLeft();
@@ -43,7 +43,7 @@ MatrizPP::~MatrizPP()
 			if (aux->getColumna() == 0) break;
 
 			stringstream s;
-			
+
 			if (aux->getCliente()->getFila())
 			{
 				s << "o ";
@@ -56,7 +56,7 @@ MatrizPP::~MatrizPP()
 		cout << fila << endl;
 	}
 	*/
-//}
+	//}
 
 
 
@@ -78,6 +78,34 @@ NodoMpp* MatrizPP::getAROW()
 NodoMpp* MatrizPP::getACOL()
 {
 	return ACOL;
+}
+
+int MatrizPP::recorrerSala()
+{
+	int cantActual = 0;
+	for (int i = 1; i < filas + 1; i++)
+	{
+		NodoMpp* nodoAux = AROW[i].getLeft();
+		while (nodoAux->getLeft()->getColumna() != 0) {
+			if (nodoAux->getColumna() != 0) {
+				for (int j = 1; j < (nodoAux->getColumna() - nodoAux->getLeft()->getColumna()); j++) {
+					cantActual++;
+				}
+			}
+			else {
+				for (int j = 0; j < (columnas - nodoAux->getLeft()->getColumna()); j++) {
+					cantActual++;
+				}
+			}
+			nodoAux = nodoAux->getLeft();
+		}
+		if (nodoAux->getLeft()->getColumna() == 0) {
+			for (int j = 1; j < (nodoAux->getColumna()); j++) {
+				cantActual++;
+			}
+		}
+	}
+	return cantActual;
 }
 
  void MatrizPP::agregaMpp(Cliente* cliente, int fila, int columna)

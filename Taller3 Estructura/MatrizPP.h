@@ -23,9 +23,9 @@ public:
 
 	bool estaVacia();
 
-	int recorrerMatriz();
+	int recorrerSala();
 
-	void vaciarMatriz();
+	void vaciarSala();
 
 	int getFilas();
 	int getColumnas();
