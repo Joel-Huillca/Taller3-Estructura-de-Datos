@@ -342,12 +342,13 @@ void Sistema::menuSalaCine()
 		{
 			cout << "\n  ****|Sub-Menu|****\n °Sala 1 °"<<endl;
 			char opSubMenu = subMenu();
+			int cantActualSala1 = sala1->recorrerSala();
 			if (opSubMenu == 'a')
 			{
 				if (peliculaSala1->getNombrePelicula() == "")
 					cout << "La sala 1 no tiene pelicula asignada" << endl;
 				else
-					cout << "La pelicula asignada a la sala 1 es " << peliculaSala1->getNombrePelicula() << " y el porcentaje de la sala ocupada es " << endl;
+					cout << "La pelicula asignada a la sala 1 es " << peliculaSala1->getNombrePelicula() << " y el porcentaje de la sala ocupada es " << (cantActualSala1/180)*100 << " % " <<endl; //(cant actual/180)*100
 			}
 			if (opSubMenu == 'b')
 			{
@@ -367,12 +368,13 @@ void Sistema::menuSalaCine()
 		{
 			cout << "\n  ****|Sub-Menu|****\n °Sala 2 °" << endl;
 			char opSubMenu = subMenu();
+			int cantActualSala2 = sala2->recorrerSala();
 			if (opSubMenu == 'a')
 			{
 				if (peliculaSala2->getNombrePelicula() == "")
 					cout << "La  sala 2 no tiene pelicula asignada" << endl;
 				else
-					cout << "La pelicula asignada a la sala 2 es " << peliculaSala2->getNombrePelicula() << " y el porcentaje de la sala ocupada es " << endl;
+					cout << "La pelicula asignada a la sala 2 es " << peliculaSala2->getNombrePelicula() << " y el porcentaje de la sala ocupada es " << (cantActualSala2/180)*100 << " % " << endl;
 			}
 			if (opSubMenu == 'b')
 			{
@@ -391,12 +393,13 @@ void Sistema::menuSalaCine()
 		{
 			cout << "\n  ****|Sub-Menu|****\n °Sala 3 °" << endl;
 			char opSubMenu = subMenu();
+			int cantActualSala3 = sala3->recorrerSala();
 			if (opSubMenu == 'a')
 			{
 				if (peliculaSala3->getNombrePelicula() == "")
 					cout << "La sala 3 no tiene pelicula asignada" << endl;
 				else
-					cout << "La pelicula asignada a la sala 3 es " << peliculaSala3->getNombrePelicula() << " y el porcentaje de la sala ocupada es " << endl;
+					cout << "La pelicula asignada a la sala 3 es " << peliculaSala3->getNombrePelicula() << " y el porcentaje de la sala ocupada es " << (cantActualSala3/180)*100 << " % "<< endl;
 			}
 			if (opSubMenu == 'b')
 			{
