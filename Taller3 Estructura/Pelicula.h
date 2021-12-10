@@ -15,6 +15,7 @@ private:
 public:
 	Pelicula();
 	Pelicula(string nombrePelicula, int duracionHoras, int duracionMinutos, string genero, int puntajePelicula, string clasificacion);
+	Pelicula(string nombrePelicula);
 
 	string getNombrePelicula();
 	int getDuracionHoras();
@@ -22,6 +23,8 @@ public:
 	string getGenero();
 	int getPuntajePelicula();
 	string getClasificacion();
+
+	void setNombrePelicula(string nombrePelicula);
 
 
 };

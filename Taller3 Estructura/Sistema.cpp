@@ -342,11 +342,15 @@ void Sistema::menuSalaCine()
 			char opSubMenu = subMenu();
 			if (opSubMenu == 'a')
 			{
-				cout << "revisando pelicula sala 1";
+				cout << "La pelicula asignada a la sala 1 es " << peliculaSala1->getNombrePelicula() << " y el porcentaje de la sala 1 ocupada es "<<endl;
 			}
 			if (opSubMenu == 'b')
 			{
-				cout << "asignando pelicula sala 1";
+				string nuevaPelicula;		
+				cout << "Asigne el nombre de una nueva pelicula: ";
+				cin >> nuevaPelicula;
+				peliculaSala1->setNombrePelicula(nuevaPelicula);
+ 			    //string nuevaPeliculaSala1 = peliculaSala1->getNombrePelicula();				
 			}
 			if (opSubMenu == 'c')
 			{
@@ -360,11 +364,14 @@ void Sistema::menuSalaCine()
 			char opSubMenu = subMenu();
 			if (opSubMenu == 'a')
 			{
-				cout << "revisando pelicula sala 2";
+				cout << "La pelicula asignada a la sala 2 es " << peliculaSala2->getNombrePelicula() << " y el porcentaje de la sala 2 ocupada es " <<endl;
 			}
 			if (opSubMenu == 'b')
 			{
-				cout << "asignando pelicula sala 2";
+				string nuevaPelicula;
+				cout << "Asigne el nombre de una nueva pelicula: ";
+				cin >> nuevaPelicula;
+				peliculaSala2->setNombrePelicula(nuevaPelicula);	
 			}
 			if (opSubMenu == 'c')
 			{
@@ -378,11 +385,14 @@ void Sistema::menuSalaCine()
 			char opSubMenu = subMenu();
 			if (opSubMenu == 'a')
 			{
-				cout << "revisando pelicula sala 3";
+				cout << "La pelicula asignada a la sala 3 es " << peliculaSala3->getNombrePelicula() << " y el porcentaje de la sala 3 ocupada es " << endl;
 			}
 			if (opSubMenu == 'b')
 			{
-				cout << "asignando pelicula sala 3";
+				string nuevaPelicula;
+				cout << "Asigne el nombre de una nueva pelicula: ";
+				cin >> nuevaPelicula;
+				peliculaSala3->setNombrePelicula(nuevaPelicula);
 			}
 			if (opSubMenu == 'c')
 			{

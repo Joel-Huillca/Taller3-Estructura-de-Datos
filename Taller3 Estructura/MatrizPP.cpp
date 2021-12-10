@@ -17,9 +17,13 @@ MatrizPP::MatrizPP(int filas, int columnas)
 	this->ACOL = new NodoMpp[columnas + 1];
 }
 
+
+
 MatrizPP::~MatrizPP()
 {
 }
+
+
 
 //void MatrizPP::imprimir()
 //{
@@ -105,4 +109,5 @@ NodoMpp* MatrizPP::getACOL()
 		 cout << "no es valido";
 	 }
 }
+
 

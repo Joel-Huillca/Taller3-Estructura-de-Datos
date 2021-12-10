@@ -1,5 +1,6 @@
 #pragma once
 #include "Cliente.h"
+#include "Pelicula.h"
 class NodoMpp
 {
 private:
