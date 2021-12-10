@@ -138,4 +138,17 @@ int MatrizPP::recorrerSala()
 	 }
 }
 
+ void MatrizPP::vaciarSala()
+ {
+	 for (int i = 1; i < filas; i++) {
+		 NodoMpp* nodoAux = AROW[i].getLeft();
+		 NodoMpp* nodoAux2 = new NodoMpp();
+		 while (nodoAux->getColumna() != 0) {
+			 nodoAux2 = nodoAux->getLeft();
+			 nodoAux->~NodoMpp();
+			 nodoAux = nodoAux2;
+		 }
+	 }
+ }
+
 

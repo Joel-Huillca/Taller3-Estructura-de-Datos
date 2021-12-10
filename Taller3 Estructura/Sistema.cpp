@@ -352,9 +352,8 @@ void Sistema::menuSalaCine()
 			{
 				string nuevaPelicula;		
 				cout << "Asigne el nombre de una nueva pelicula: ";
-				cin >> nuevaPelicula;
-				peliculaSala1->setNombrePelicula(nuevaPelicula);
-				
+				cin >> nuevaPelicula;  
+				peliculaSala1->setNombrePelicula(nuevaPelicula); 			  
 			}
 			if (opSubMenu == 'c')
 			{
