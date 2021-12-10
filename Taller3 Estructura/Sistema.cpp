@@ -115,6 +115,7 @@ void Sistema::lecturaPeliculas()
 	archivoPeliculas.close();
 }
 
+
 /*void Sistema::agregaMpp(Cliente* cliente, int fila, int columna)
 {
 	if (columna < 5 && fila % 4 != 0 && (fila + columna) % 2 == 0 || columna > 26 && fila % 4 != 0 && (fila + columna) % 2 == 0 || columna > 7 && columna < 24 && fila % 4 != 0 && (fila + columna) % 2 != 0)
@@ -194,13 +195,14 @@ void Sistema::menuPrincipal()
 		}
 		break;
 		case 'd':
-			salir = true;
-			//generar un archivo de salida
-			cout << "\n\n ------------------------------------- \n|Hasta luego y GRACIAS por preferirnos|\n|	    Cine Ritsa 3D	      |\n ------------------------------------- \n";// _____________________________________ 
+			bool salirM = salir_Menu();
+			if (salirM) salir = true;
+			else salir = false;
 		}
 	}
 	
 }
+
 
 char Sistema::subMenu()
 {
@@ -473,6 +475,61 @@ void Sistema::menuEstadisticas()
 	}
 }
 
+bool  Sistema::salir_Menu()
+{
+	string opcionString;
+	cout << "\nEsta seguro de salir del sistema?\n>>    [1] Si | [2] No : ";
+	cin >> opcionString;
+	while (!opcionString._Equal("1") && !opcionString._Equal("2")){
+		cout << "\nEsta seguro de salir del sistema?\n>>    [1] Si | [2] No : ";
+		cin >> opcionString;
+	}
+	if (opcionString._Equal("1"))
+	{
+		ofstream archivo("HistoricoClientes.txt");
 
+		
+		archivo <<"Cliente 1" << "," <<"Apellido 1" << "," << "Rut" << "," << "Pelicula" ;
+		//archivo <<"Cliente 1" << "," <<"Apellido 1" << "," << (listaNaves->getCantElem() - FcantNavDest) << "," << FmayorGalax << "," << FcantNavesLlenas;
+
+
+
+		cout << "\n\n ------------------------------------- \n|Hasta luego y GRACIAS por preferirnos|\n|	    Cine Ritsa 3D	      |\n ------------------------------------- \n";
+		return true;
+	}else
+	{
+		system("cls");
+		return false;
+	}
+}
+
+
+
+/*
+bool  Sistema::salir_Menu()
+{
+	string opcionString;
+	char op1;
+	cout << "\nEsta seguro de salir del sistema?" << endl;
+	cout << "[1] Si | [2] No : ";
+	cin >> opcionString;
+	if (opcionString._Equal("1") || opcionString._Equal("2"))
+	{
+		if (opcionString._Equal("1")) op1 = '1';
+		if (opcionString._Equal("2")) op1 = '2';
+		switch (op1)
+		{
+		case '1':
+
+			cout << "\n\n ------------------------------------- \n|Hasta luego y GRACIAS por preferirnos|\n|	    Cine Ritsa 3D	      |\n ------------------------------------- \n";
+			return true;
+		case '2':
+			system("cls");
+			return false;
+		}
+	}
+	else salir_Menu();
+	
+}*/
 
 
