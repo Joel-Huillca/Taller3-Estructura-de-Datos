@@ -58,5 +58,4 @@ string Pelicula::getClasificacion()
 void Pelicula::setNombrePelicula(string nuevoNombrePelicula)
 {
 	this->nombrePelicula = nuevoNombrePelicula;
-
 }

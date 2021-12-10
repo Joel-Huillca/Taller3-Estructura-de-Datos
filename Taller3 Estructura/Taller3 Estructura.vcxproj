@@ -163,6 +163,7 @@
   <ItemGroup>
     <Text Include="Clientes - copia.txt" />
     <Text Include="Clientes.txt" />
+    <Text Include="HistoricoClientes.txt" />
     <Text Include="Peliculas - copia.txt" />
     <Text Include="Peliculas.txt" />
   </ItemGroup>

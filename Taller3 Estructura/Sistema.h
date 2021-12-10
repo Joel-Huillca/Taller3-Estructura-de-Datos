@@ -1,4 +1,5 @@
 #pragma once
+
 #include <algorithm>
 #include <iostream>
 #include <stdlib.h>
@@ -35,7 +36,7 @@ public:
 	~Sistema();
 
 	void menuPrincipal();
-
+	
 	char subMenu();
 
 	void menuFilaEspera();
@@ -48,6 +49,7 @@ public:
 
 	void lecturaPeliculas();
 
+	bool salir_Menu();
 	//void agregaMpp(Cliente* cliente, int fila, int columna);
 };
 

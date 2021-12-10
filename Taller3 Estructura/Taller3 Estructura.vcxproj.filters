@@ -80,5 +80,6 @@
       <Filter>Archivos de recursos\Archivos UCN _-_</Filter>
     </Text>
     <Text Include="Clientes.txt" />
+    <Text Include="HistoricoClientes.txt" />
   </ItemGroup>
 </Project>
