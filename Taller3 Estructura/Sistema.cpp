@@ -239,7 +239,7 @@ char Sistema::subMenu()
 				return 'c';
 			}
 			case 'd':
-				return false;
+				return 'd';
 		}
 	}
 }
@@ -342,7 +342,10 @@ void Sistema::menuSalaCine()
 			char opSubMenu = subMenu();
 			if (opSubMenu == 'a')
 			{
-				cout << "La pelicula asignada a la sala 1 es " << peliculaSala1->getNombrePelicula() << " y el porcentaje de la sala 1 ocupada es "<<endl;
+				if (peliculaSala1->getNombrePelicula() == "")
+					cout << "La sala 1 no tiene pelicula asignada" << endl;
+				else
+					cout << "La pelicula asignada a la sala 1 es " << peliculaSala1->getNombrePelicula() << " y el porcentaje de la sala ocupada es " << endl;
 			}
 			if (opSubMenu == 'b')
 			{
@@ -350,7 +353,7 @@ void Sistema::menuSalaCine()
 				cout << "Asigne el nombre de una nueva pelicula: ";
 				cin >> nuevaPelicula;
 				peliculaSala1->setNombrePelicula(nuevaPelicula);
- 			    //string nuevaPeliculaSala1 = peliculaSala1->getNombrePelicula();				
+				
 			}
 			if (opSubMenu == 'c')
 			{
@@ -364,7 +367,10 @@ void Sistema::menuSalaCine()
 			char opSubMenu = subMenu();
 			if (opSubMenu == 'a')
 			{
-				cout << "La pelicula asignada a la sala 2 es " << peliculaSala2->getNombrePelicula() << " y el porcentaje de la sala 2 ocupada es " <<endl;
+				if (peliculaSala2->getNombrePelicula() == "")
+					cout << "La  sala 2 no tiene pelicula asignada" << endl;
+				else
+					cout << "La pelicula asignada a la sala 2 es " << peliculaSala2->getNombrePelicula() << " y el porcentaje de la sala ocupada es " << endl;
 			}
 			if (opSubMenu == 'b')
 			{
@@ -385,7 +391,10 @@ void Sistema::menuSalaCine()
 			char opSubMenu = subMenu();
 			if (opSubMenu == 'a')
 			{
-				cout << "La pelicula asignada a la sala 3 es " << peliculaSala3->getNombrePelicula() << " y el porcentaje de la sala 3 ocupada es " << endl;
+				if (peliculaSala3->getNombrePelicula() == "")
+					cout << "La sala 3 no tiene pelicula asignada" << endl;
+				else
+					cout << "La pelicula asignada a la sala 3 es " << peliculaSala3->getNombrePelicula() << " y el porcentaje de la sala ocupada es " << endl;
 			}
 			if (opSubMenu == 'b')
 			{
