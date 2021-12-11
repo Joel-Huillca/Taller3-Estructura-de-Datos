@@ -115,7 +115,6 @@ void Sistema::lecturaPeliculas()
 	archivoPeliculas.close();
 }
 
-
 /*void Sistema::agregaMpp(Cliente* cliente, int fila, int columna)
 {
 	if (columna < 5 && fila % 4 != 0 && (fila + columna) % 2 == 0 || columna > 26 && fila % 4 != 0 && (fila + columna) % 2 == 0 || columna > 7 && columna < 24 && fila % 4 != 0 && (fila + columna) % 2 != 0)
@@ -478,7 +477,7 @@ void Sistema::menuEstadisticas()
 bool  Sistema::salir_Menu()
 {
 	string opcionString;
-	cout << "\nEsta seguro de salir del sistema?\n>>    [1] Si | [2] No : ";
+	cout << "Esta seguro de salir del sistema?\n>>    [1] Si | [2] No : ";
 	cin >> opcionString;
 	while (!opcionString._Equal("1") && !opcionString._Equal("2")){
 		cout << "\nEsta seguro de salir del sistema?\n>>    [1] Si | [2] No : ";

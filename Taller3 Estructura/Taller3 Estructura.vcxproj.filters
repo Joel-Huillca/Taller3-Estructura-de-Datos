@@ -72,13 +72,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="Peliculas - copia.txt">
-      <Filter>Archivos de recursos\Archivos UCN _-_</Filter>
-    </Text>
     <Text Include="Peliculas.txt" />
-    <Text Include="Clientes - copia.txt">
-      <Filter>Archivos de recursos\Archivos UCN _-_</Filter>
-    </Text>
     <Text Include="Clientes.txt" />
     <Text Include="HistoricoClientes.txt" />
   </ItemGroup>

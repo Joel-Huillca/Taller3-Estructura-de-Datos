@@ -1,5 +1,5 @@
 #include "NodoMpp.h"
-NodoMpp::NodoMpp()
+NodoMpp::NodoMpp() //ACOL y el ARROW
 {
 	this->left = this;
 	this->up = this;

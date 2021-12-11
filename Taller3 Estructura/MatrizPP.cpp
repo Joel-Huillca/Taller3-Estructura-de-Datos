@@ -24,7 +24,6 @@ MatrizPP::~MatrizPP()
 }
 
 
-
 //void MatrizPP::imprimir()
 //{
 	/*
@@ -32,7 +31,7 @@ MatrizPP::~MatrizPP()
 	{
 		string fila;
 		NodoMpp*aux = AROW[i].getLeft();
-		int espaciosVacios = columnas - aux->getColumna();
+		int espaciosVacios = columnas - aux->getColumna();//Obtiene la distancia entre auxliar....
 		while (true)
 		{
 			for (int j=0; j<espaciosVacios; j++)
@@ -42,12 +41,13 @@ MatrizPP::~MatrizPP()
 			}
 			if (aux->getColumna() == 0) break;
 
+			//____________________________________
 			stringstream s;
-
 			if (aux->getCliente()->getFila())
 			{
 				s << "o ";
-			}
+			}//____________________________________
+			
 
 			fila = s.str() + fila;
 			espaciosVacios = aux->getColumna() - aux->getLeft()->getColumna() - 1;
@@ -57,7 +57,6 @@ MatrizPP::~MatrizPP()
 	}
 	*/
 	//}
-
 
 
 int MatrizPP::getFilas()

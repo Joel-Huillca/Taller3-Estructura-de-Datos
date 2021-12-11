@@ -161,10 +161,8 @@
     <None Include="..\..\..\..\Taller 3\Enunciado Taller 3.pdf" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="Clientes - copia.txt" />
     <Text Include="Clientes.txt" />
     <Text Include="HistoricoClientes.txt" />
-    <Text Include="Peliculas - copia.txt" />
     <Text Include="Peliculas.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
