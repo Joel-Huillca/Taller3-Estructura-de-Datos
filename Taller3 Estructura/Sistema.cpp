@@ -342,6 +342,7 @@ void Sistema::menuSalaCine()
 			cout << "\n  ****|Sub-Menu|****\n °Sala 1 °"<<endl;
 			char opSubMenu = subMenu();
 			int cantActualSala1 = sala1->recorrerSala();
+			bool salaVacia1 = sala1->estaVacia();
 			if (opSubMenu == 'a')
 			{
 				if (peliculaSala1->getNombrePelicula() == "")
@@ -351,14 +352,30 @@ void Sistema::menuSalaCine()
 			}
 			if (opSubMenu == 'b')
 			{
-				string nuevaPelicula;		
-				cout << "Asigne el nombre de una nueva pelicula: ";
-				cin >> nuevaPelicula;  
-				peliculaSala1->setNombrePelicula(nuevaPelicula); 			  
+				if (peliculaSala1->getNombrePelicula() != "") { // si existe una pelicula se podra asignar solo si esta vacia
+					if (salaVacia1 == true) {
+						string nuevaPelicula;
+						cout << "Asigne el nombre de una nueva pelicula: ";
+						cin >> nuevaPelicula;
+						peliculaSala1->setNombrePelicula(nuevaPelicula);
+					}
+					else
+						cout << "La sala 1 no esta vacia,no puede reasignar una pelicula" << endl;
+				}
+				else
+				{
+					string nuevaPelicula;
+					cout << "Asigne el nombre de una nueva pelicula: ";
+					cin >> nuevaPelicula;
+					peliculaSala1->setNombrePelicula(nuevaPelicula);
+				}
 			}
 			if (opSubMenu == 'c')
 			{
-				cout << "iniciando pelicula sala 1";
+				cout << "Iniciando la pelicula " << peliculaSala1->getNombrePelicula();
+				peliculaSala1->setNombrePelicula("");
+				sala1->vaciarSala();
+				sala1->~MatrizPP();
 			}			
 		}
 		break;
@@ -367,6 +384,7 @@ void Sistema::menuSalaCine()
 			cout << "\n  ****|Sub-Menu|****\n °Sala 2 °" << endl;
 			char opSubMenu = subMenu();
 			int cantActualSala2 = sala2->recorrerSala();
+			bool salaVacia2 = sala2->estaVacia();
 			if (opSubMenu == 'a')
 			{
 				if (peliculaSala2->getNombrePelicula() == "")
@@ -376,14 +394,30 @@ void Sistema::menuSalaCine()
 			}
 			if (opSubMenu == 'b')
 			{
-				string nuevaPelicula;
-				cout << "Asigne el nombre de una nueva pelicula: ";
-				cin >> nuevaPelicula;
-				peliculaSala2->setNombrePelicula(nuevaPelicula);	
+				if (peliculaSala2->getNombrePelicula() != "") { 
+					if (salaVacia2 == true) {
+						string nuevaPelicula;
+						cout << "Asigne el nombre de una nueva pelicula: ";
+						cin >> nuevaPelicula;
+						peliculaSala2->setNombrePelicula(nuevaPelicula);
+					}
+					else
+						cout << "La sala 2 no esta vacia,no puede reasignar una pelicula" << endl;
+				}
+				else
+				{
+					string nuevaPelicula;
+					cout << "Asigne el nombre de una nueva pelicula: ";
+					cin >> nuevaPelicula;
+					peliculaSala2->setNombrePelicula(nuevaPelicula);
+				}
 			}
 			if (opSubMenu == 'c')
 			{
-				cout << "iniciando pelicula sala 2";
+				cout << "Iniciando la pelicula " << peliculaSala2->getNombrePelicula();
+				peliculaSala2->setNombrePelicula("");
+				sala2->vaciarSala();
+				sala2->~MatrizPP();
 			}
 		}
 		break;
@@ -392,6 +426,7 @@ void Sistema::menuSalaCine()
 			cout << "\n  ****|Sub-Menu|****\n °Sala 3 °" << endl;
 			char opSubMenu = subMenu();
 			int cantActualSala3 = sala3->recorrerSala();
+			bool salaVacia3 = sala3->estaVacia();
 			if (opSubMenu == 'a')
 			{
 				if (peliculaSala3->getNombrePelicula() == "")
@@ -401,14 +436,30 @@ void Sistema::menuSalaCine()
 			}
 			if (opSubMenu == 'b')
 			{
-				string nuevaPelicula;
-				cout << "Asigne el nombre de una nueva pelicula: ";
-				cin >> nuevaPelicula;
-				peliculaSala3->setNombrePelicula(nuevaPelicula);
+				if (peliculaSala3->getNombrePelicula() != "") {
+					if (salaVacia3 == true) {
+						string nuevaPelicula;
+						cout << "Asigne el nombre de una nueva pelicula: ";
+						cin >> nuevaPelicula;
+						peliculaSala3->setNombrePelicula(nuevaPelicula);
+					}
+					else
+						cout << "La sala 3 no esta vacia,no puede reasignar una pelicula" << endl;
+				}
+				else
+				{
+					string nuevaPelicula;
+					cout << "Asigne el nombre de una nueva pelicula: ";
+					cin >> nuevaPelicula;
+					peliculaSala3->setNombrePelicula(nuevaPelicula);
+				}
 			}
 			if (opSubMenu == 'c')
 			{
-				cout << "iniciando pelicula sala 3";
+				cout << "Iniciando  la pelicula " << peliculaSala3->getNombrePelicula();
+				peliculaSala3->setNombrePelicula("");
+				sala3->vaciarSala();
+				sala3->~MatrizPP();
 			}
 		}
 		break;
@@ -417,7 +468,6 @@ void Sistema::menuSalaCine()
 			cout << "Saliendo del menu sala de cine..." << endl;
 		}
 		break;
-
 	}
 }
 

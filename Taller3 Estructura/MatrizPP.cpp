@@ -150,4 +150,14 @@ int MatrizPP::recorrerSala()
 	 }
  }
 
+ bool MatrizPP::estaVacia()
+ {
+	 int cantSala = recorrerSala();
+	 if (cantSala == 0) { //si no hay nada en la sala retorna verdadero
+		 return true;
+	 }
+	 else
+		 return false; 
+ }
+
 
