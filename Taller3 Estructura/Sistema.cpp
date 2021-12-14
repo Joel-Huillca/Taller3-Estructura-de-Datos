@@ -254,8 +254,7 @@ void Sistema::menuFilaEspera()
 	{
 		case 'a':
 		{
-			cout << "atendiendo fila...";
-			//mpp->imprimirMpp();
+			sala1->imprimirSala();
 		}
 		break;
 		case 'b':
