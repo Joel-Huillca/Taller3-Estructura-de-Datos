@@ -61,7 +61,7 @@ void Sistema::lecturaClientes()
 		{
 			//Se agregan a la matriz
 			Cliente* cliente = new Cliente(nombre, apellido, rut, pelicula, fila, columna, salaCola);
-			//mpp->agregaMpp(cliente, fila, columna);
+			sala1->agregaMpp(cliente, fila, columna);
 		}
 	}
 	archivoClientes.close();
@@ -124,46 +124,19 @@ int pasarRut_StrInt(string rut)
 	int rutInt = stoi(rut);
 	return rutInt;
 }//Nos devuelve el rut sin el digito v. (formato int)
-/*void Sistema::agregaMpp(Cliente* cliente, int fila, int columna)
-{
-	if (columna < 5 && fila % 4 != 0 && (fila + columna) % 2 == 0 || columna > 26 && fila % 4 != 0 && (fila + columna) % 2 == 0 || columna > 7 && columna < 24 && fila % 4 != 0 && (fila + columna) % 2 != 0)
-	{
-		NodoMpp* nodoMpp = new NodoMpp(cliente, fila, columna);
 
-		NodoMpp* aux = &mpp->getAROW()[fila];
-		while (aux->getLeft()->getColumna() > 0 && aux->getLeft()->getColumna() > columna)
-		{
-			if (aux->getLeft()->getColumna() == columna) {  // ya esta ocupado
-				return;
-			}
-			aux = aux->getLeft();
-		}
-		nodoMpp->setLeft(aux->getLeft());
-		aux->setLeft(nodoMpp);
 
-		NodoMpp* aux2 = &mpp->getACOL()[columna];
-		while (aux2->getUp()->getFila() > 0 && aux2->getUp()->getFila() > fila)
-		{
-			aux2 = aux2->getUp();
-		}
-		nodoMpp->setLeft(aux2->getUp());
-		aux2->setUp(nodoMpp);
-	}
-	else
-	{
-		cout << "no es valido";
-	}
-}*/
 
 string Sistema::recibirPelicula(string peliculaCliente)
 {
-	//string rut1 = "21.934.925-2";
-	//int rut = pasarRut_StrInt(rut1);
-	//cout << rut << endl;
+	getline(cin, peliculaCliente);
+	// se borran los espacios y se pone todo en mayuscula para poder comparar
+	peliculaCliente.erase(remove(peliculaCliente.begin(), peliculaCliente.end(), ' '), peliculaCliente.end());
+	transform(peliculaCliente.begin(), peliculaCliente.end(), peliculaCliente.begin(), ::toupper);
+	return peliculaCliente;
+}
 
-	lecturaClientes();
-	lecturaPeliculas();
-
+void Sistema::menuPrincipal(){
 	cout << "____.:Bienvenido a CineRitsa3D:.____" << endl;
 	bool salir = false;
 	string opcionString;
@@ -304,14 +277,14 @@ void Sistema::menuFilaEspera()
 			while (!colaNombrePelicula.empty()) {
 				if (peliculaClienteCheck._Equal(colaNombrePelicula.front())) {
 					Cliente* cliente = new Cliente(nombre,apellido,rut,peliculaClienteCheck);
-					cola_Esp.push(*cliente);
-					cout << "El cliente ha sido agregado" << endl;
+					cola.push(*cliente);
+					cout << "El cliente ha sido agregado a la fila de espera" << endl;
 					return;
 				}
 				else
 					colaNombrePelicula.pop();
 			}
-			cout << "La pelicula que desea ver,no la maneja el cine" << endl;
+			cout << "La pelicula que desea ver no la maneja el cine,lo sentimos" << endl;
 		}
 		break;
 		case 'c':
@@ -492,13 +465,14 @@ void Sistema::menuEstadisticas()
 {
 	string opcion;
 	char opcion1;
-	cout << "\n>>Menu Estadisticas\n  a) Porcentaje de espectadores por pelicula \n  b) Cantidad de personas en cola\n  c) Cantidad de personas por sala\n  d) Persona más longeva y personas más joven\n  e) Volver\n  Elija una opcion para el menu estadisticas: ";
+	int contCola=0;
+	cout << "\n>>Menu Estadisticas\n  a) Porcentaje de espectadores por pelicula \n  b) Cantidad de personas en cola\n  c) Cantidad de personas por sala\n  d) Persona mas longeva y personas mas joven\n  e) Volver\n  Elija una opcion para el menu estadisticas: ";
 	cin >> opcion;
 
 	while (!opcion._Equal("a") && !opcion._Equal("b") && !opcion._Equal("c") && !opcion._Equal("d") && !opcion._Equal("e"))
 	{
 		system("cls");
-		cout << "Ingrese una opcion correcta\n>>Menu Estadisticas\n  a) Porcentaje de espectadores por pelicula \n  b) Cantidad de personas en cola\n  c) Cantidad de personas por sala\n  d) Persona más longeva y personas más joven\n  e) Volver\n  Elija una opcion para el menu estadisticas: ";
+		cout << "Ingrese una opcion correcta\n>>Menu Estadisticas\n  a) Porcentaje de espectadores por pelicula \n  b) Cantidad de personas en cola\n  c) Cantidad de personas por sala\n  d) Persona mas longeva y personas mas joven\n  e) Volver\n  Elija una opcion para el menu estadisticas: ";
 		cin >> opcion;
 	}
 
@@ -518,12 +492,20 @@ void Sistema::menuEstadisticas()
 	break;
 	case 'b':
 	{
-		cout << "El numero de personas en la fila de espera es ";
+		while (!cola.empty())
+		{
+			cola.pop();
+			contCola++;
+		}
+		cout << "El numero de personas en la fila de espera es " << contCola ;
 	}
 	break;
 	case 'c':
 	{
-		cout << "ccccccccc";
+		
+		cout << "La sala 1 tiene "<< sala1->recorrerSala() << " personas en la sala de cine"<<endl;
+		cout << "La sala 2 tiene "<< sala2->recorrerSala() << " personas en la sala de cine"<<endl;
+		cout << "La sala 3 tiene "<< sala3->recorrerSala() << " personas en la sala de cine"<<endl;
 	}
 	break;
 	case 'd':
