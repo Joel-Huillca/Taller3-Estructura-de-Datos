@@ -19,6 +19,8 @@ public:
 
 	void imprimir();
 
+	void imprimirSala();
+
 	void agregaMpp(Cliente* cliente, int fila, int columna);
 
 	bool estaVacia();

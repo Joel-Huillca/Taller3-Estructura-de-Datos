@@ -59,6 +59,36 @@ MatrizPP::~MatrizPP()
 	//}
 
 
+void MatrizPP::imprimirSala()
+{
+	for (int i = 1; i < filas + 1; i++)
+	{
+		NodoMpp* nodoAux = &AROW[i];
+		while (nodoAux->getLeft()->getColumna() != 0) {
+			if (nodoAux->getColumna() != 0) {
+				for (int j = 1; j < (nodoAux->getColumna() - nodoAux->getLeft()->getColumna()); j++) {
+					cout << "H";
+				}
+			}
+			else {
+				for (int j = 0; j < (columnas - nodoAux->getLeft()->getColumna()); j++) {
+					cout << "H";
+				}
+			}
+			cout << "O";
+			nodoAux = nodoAux->getLeft();
+		}
+
+
+		if (nodoAux->getLeft()->getColumna() == 0) {
+			for (int j = 1; j < (nodoAux->getColumna()); j++) {
+				cout << "I";
+			}
+		}
+
+	}
+}
+
 int MatrizPP::getFilas()
 {
 	return this->filas;
