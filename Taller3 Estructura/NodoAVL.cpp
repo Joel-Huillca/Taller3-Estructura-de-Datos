@@ -2,56 +2,24 @@
 using namespace std;
 NodoAVL::NodoAVL()
 {
+    this->cliente = cliente;
+    this->hijoIzq = NULL;
+    this->hijoDer = NULL;
+    this->padre = NULL;
 }
 
 NodoAVL::NodoAVL(Cliente* cliente)
 {
     this-> cliente = cliente;
-    this-> hijoIzq = nullptr;
-    this-> hijoDer = nullptr;
-    this-> factorBalance = 0;
+    this-> hijoIzq = NULL;
+    this-> hijoDer = NULL;
+    this-> padre = NULL;
 }
 
-void NodoAVL::agregar(Cliente* cliente)
-{
-	if (!this->cliente)
-	{
-		return;
-	}
-	if (this->cliente->getRut() == cliente->getRut())
-	{
-		return;
-	}
-	if (cliente->getRut() > this->cliente->getRut())
-	{
-		if (this->hijoDer)
-		{
-			this->hijoDer->agregar(cliente);
-		}
-		else {
-			this->hijoDer = new NodoAVL(cliente);
-		}
-	}
-
-	else
-	{
-		if (this->hijoIzq)
-		{
-			this->hijoIzq->agregar(cliente);
-		}
-		else {
-			this->hijoIzq = new NodoAVL(cliente);
-		}
-	}
-}
 
 Cliente* NodoAVL::getCliente()
 {
     return this->cliente;
-}
-
-void NodoAVL::setCliente(Cliente* cliente)
-{
 }
 
 NodoAVL* NodoAVL::getHijoIzq()
@@ -64,35 +32,32 @@ NodoAVL* NodoAVL::getHijoDer()
 	return this->hijoDer;
 }
 
-void NodoAVL::preOrden()
+NodoAVL* NodoAVL::getPadre()
 {
-    cout << this->cliente->getRut() << endl;
-    if (this->hijoIzq)
-    {
-        this->hijoIzq->preOrden();
-    }
-    if (this->hijoDer)
-    {
-        this->hijoDer->preOrden();
-    }
+    return this->padre;
 }
 
-void NodoAVL::inOrden()
+void NodoAVL::setCliente(Cliente* cliente)
 {
-    if (this->hijoIzq)
-    {
-        this->hijoIzq->inOrden();
-    }
-	//cout << "-" << this->getCliente()->getNombre() << endl;
-    if (this->hijoDer)
-    {
-        this->hijoDer->inOrden();
-    }
+    this->cliente = cliente;
 }
 
-void NodoAVL::postOrden()
+void NodoAVL::setHijoIzq(NodoAVL* hijoIzq)
 {
+    this->hijoIzq = hijoIzq;
 }
+
+void NodoAVL::setHijoDer(NodoAVL* hijoDer)
+{
+    this->hijoDer = hijoDer ;
+}
+
+void NodoAVL::setPadre(NodoAVL* padre)
+{
+    this->padre = padre;
+}
+
+
 
 
 
