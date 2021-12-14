@@ -74,11 +74,11 @@ void Sistema::lecturaPeliculas()
 {
 	ifstream archivoPeliculas("Peliculas.txt");
 	string linea = "";
-	
+
 	while (getline(archivoPeliculas, linea))
 	{
 		string nombrePelicula;
-		
+
 		string duracionHorasAux;
 		int duracionHoras;
 
@@ -104,12 +104,13 @@ void Sistema::lecturaPeliculas()
 		duracionHoras = stoi(duracionHorasAux);
 		duracionMinutos = stoi(duracionMinutosAux);
 		puntajePelicula = stoi(puntajePeliculaAux);
-		
-		//Coloca el dato en Mayuscula:
-		//transform(nombrePelicula.begin(), nombrePelicula.end(), nombrePelicula.begin(), ::toupper);
 
-		Pelicula* pelicula = new Pelicula(nombrePelicula, duracionHoras, duracionMinutos, generoPelicula, puntajePelicula, clasificacion);
-				
+		//Coloca el dato en Mayuscula y borra espacios:
+		nombrePelicula.erase(remove(nombrePelicula.begin(), nombrePelicula.end(), ' '), nombrePelicula.end());
+		transform(nombrePelicula.begin(), nombrePelicula.end(), nombrePelicula.begin(), ::toupper);
+
+		Pelicula* peliculaTexto = new Pelicula(nombrePelicula, duracionHoras, duracionMinutos, generoPelicula, puntajePelicula, clasificacion);
+		colaNombrePelicula.push(peliculaTexto->getNombrePelicula());
 	}
 
 	archivoPeliculas.close();
@@ -154,7 +155,7 @@ int pasarRut_StrInt(string rut)
 	}
 }*/
 
-void Sistema::menuPrincipal()
+string Sistema::recibirPelicula(string peliculaCliente)
 {
 	//string rut1 = "21.934.925-2";
 	//int rut = pasarRut_StrInt(rut1);
@@ -286,28 +287,32 @@ void Sistema::menuFilaEspera()
 		break;
 		case 'b':
 		{
-			cout << "Ingrese nombre del cliente ha agregar: ";
 			string nombre;
-			cin >> nombre;
-			cout << "Ingrese apellido del cliente ha agregar: ";
 			string apellido;
-			cin >> apellido;
-			cout << "Ingrese rut del cliente ha agregar: ";
 			string rut;
+			string peliculaCliente;
+			cout << "Ingrese nombre del cliente ha agregar: " ;
+			cin >> nombre;
+			cout << "Ingrese apellido del cliente ha agregar: " ;
+			cin >> apellido;
+			cout << "Ingrese rut del cliente ha agregar: " ;
 			cin >> rut;
 			cout << "Ingrese pelicula que desea ver el cliente: ";
-			string pelicula;
-			cin >> pelicula;
-			//cout << nombre << apellido << rut << pelicula;
-
-			
-			Cliente* cliente = new Cliente(nombre, apellido, rut, pelicula);
-			cola.push(*cliente);
-		
-			menuFilaEspera();
-			
+			getline(cin, peliculaCliente);
+			string peliculaClienteCheck = recibirPelicula(peliculaCliente);
+			//cout << "Los datos son " << nombre << apellido << rut << peliculaClienteCheck <<endl;
+			while (!colaNombrePelicula.empty()) {
+				if (peliculaClienteCheck._Equal(colaNombrePelicula.front())) {
+					Cliente* cliente = new Cliente(nombre,apellido,rut,peliculaClienteCheck);
+					cola_Esp.push(*cliente);
+					cout << "El cliente ha sido agregado" << endl;
+					return;
+				}
+				else
+					colaNombrePelicula.pop();
+			}
+			cout << "La pelicula que desea ver,no la maneja el cine" << endl;
 		}
-	
 		break;
 		case 'c':
 		{
@@ -508,12 +513,12 @@ void Sistema::menuEstadisticas()
 	{
 	case 'a':
 	{
-		cout << "aaaaaaaaaa";
+		cout << "porcentaje de espectadores que vieron cada pelicula(recorrer arbol avl)"<<endl;
 	}
 	break;
 	case 'b':
 	{
-		cout << "bbbbbbbbbbbb";
+		cout << "El numero de personas en la fila de espera es ";
 	}
 	break;
 	case 'c':
@@ -563,8 +568,6 @@ bool  Sistema::salir_Menu()
 		return false;
 	}
 }
-
-
 
 /*
 bool  Sistema::salir_Menu()

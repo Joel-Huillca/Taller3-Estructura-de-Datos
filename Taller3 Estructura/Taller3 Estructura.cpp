@@ -6,6 +6,8 @@
 int main()
 {   
     Sistema* sistema = new Sistema;
+    sistema->lecturaClientes();
+    sistema->lecturaPeliculas();
     sistema->menuPrincipal();
 }
 

@@ -23,7 +23,7 @@ public:
 	//int cantNodos(NodoAVL* cliente);//ABB
 
 
-	void insertNewNode(Cliente* cliente);
+	//void insertNewNode(Cliente* cliente);
 
 	
 
