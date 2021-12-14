@@ -17,10 +17,10 @@ public:
 	NodoAVL(Cliente* cliente);
 
 
-	Cliente* getCliente();
-	NodoAVL* getHijoIzq();
-	NodoAVL* getHijoDer();
-	NodoAVL* getPadre();
+	Cliente*& getCliente();
+	NodoAVL*& getHijoIzq();
+	NodoAVL*& getHijoDer();
+	NodoAVL*& getPadre();
 
 	void setCliente(Cliente* cliente);
 	void setHijoIzq(NodoAVL* hijoIzq );

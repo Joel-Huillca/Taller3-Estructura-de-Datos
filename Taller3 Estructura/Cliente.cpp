@@ -60,6 +60,24 @@ string Cliente::getSalaCola()
 	return this->salaCola;
 }
 
+int Cliente::getRutNumero()
+{   
+	string rutAux = this->rut;
+	//Eliminan los ' 'y'.'
+	rutAux.erase(remove(rutAux.begin(), rutAux.end(), ' '));
+	rutAux.erase(remove(rutAux.begin(), rutAux.end(), '.'));
+	rutAux.erase(8); //Solo quedan los primeros 6 digitos
+	int rutInt = stoi(rut);
+	return rutInt;
+}
+void Cliente::printCliente()
+{
+	cout << "Nombre: " << this->nombre << ", Apellido: "
+		<< this->apellido << ", Rut: " << this->rut << ", Pelicula: " << this->pelicula << endl << endl;
+}
+//Nos devuelve el rut sin el digito v. (formato int)
+
+
 string Cliente::setPelicula(string new_pelicula)
 {
 	return this->pelicula = new_pelicula;

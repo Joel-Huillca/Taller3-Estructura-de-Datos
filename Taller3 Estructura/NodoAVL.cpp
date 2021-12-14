@@ -17,22 +17,22 @@ NodoAVL::NodoAVL(Cliente* cliente)
 }
 
 
-Cliente* NodoAVL::getCliente()
+Cliente*& NodoAVL::getCliente()
 {
     return this->cliente;
 }
 
-NodoAVL* NodoAVL::getHijoIzq()
+NodoAVL*& NodoAVL::getHijoIzq()
 {
 	return this->hijoIzq;
 }
 
-NodoAVL* NodoAVL::getHijoDer()
+NodoAVL*& NodoAVL::getHijoDer()
 {
 	return this->hijoDer;
 }
 
-NodoAVL* NodoAVL::getPadre()
+NodoAVL*& NodoAVL::getPadre()
 {
     return this->padre;
 }

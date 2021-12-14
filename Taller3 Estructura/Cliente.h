@@ -29,7 +29,9 @@ public:
 	int getFila();
 	int getColumna();
 	string getSalaCola();
+	int getRutNumero();
 
+	void printCliente();
 
 /*  Set's de la clase Cliente
 	@param */
@@ -37,6 +39,6 @@ public:
 	int setFila(int new_fila);
 	int setColumna(int new_columna);
 	string setSala_columna(string new_sala_Columna);
-
+	
 };
 
