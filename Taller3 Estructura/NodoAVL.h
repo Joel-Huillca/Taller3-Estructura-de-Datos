@@ -6,29 +6,26 @@ using namespace std;
 class NodoAVL
 {
 private:
+
+	Cliente* cliente;
 	NodoAVL* hijoIzq;
 	NodoAVL* hijoDer;
-	Cliente* cliente;
-	int factorBalance;
-
+	NodoAVL* padre;
+	
 public:
 	NodoAVL();
 	NodoAVL(Cliente* cliente);
 
-	void agregar(Cliente* cliente);
-
 
 	Cliente* getCliente();
-	void setCliente(Cliente* cliente);
-
-
 	NodoAVL* getHijoIzq();
 	NodoAVL* getHijoDer();
+	NodoAVL* getPadre();
 
-	void preOrden();
-	void inOrden();
-	void postOrden();
-
+	void setCliente(Cliente* cliente);
+	void setHijoIzq(NodoAVL* hijoIzq );
+	void setHijoDer(NodoAVL* hijoDer);
+	void setPadre(NodoAVL* padre);
 };
 
 

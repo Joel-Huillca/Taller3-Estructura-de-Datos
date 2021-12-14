@@ -116,8 +116,14 @@ void Sistema::lecturaPeliculas()
 	archivoPeliculas.close();
 }
 
-
-
+int pasarRut_StrInt(string rut)
+{	//Eliminan los ' 'y'.'
+	rut.erase(remove(rut.begin(), rut.end(), ' '));
+	rut.erase(remove(rut.begin(), rut.end(), '.'));
+	rut.erase(8); //Solo quedan los primeros 6 digitos
+	int rutInt = stoi(rut);
+	return rutInt;
+}//Nos devuelve el rut sin el digito v. (formato int)
 /*void Sistema::agregaMpp(Cliente* cliente, int fila, int columna)
 {
 	if (columna < 5 && fila % 4 != 0 && (fila + columna) % 2 == 0 || columna > 26 && fila % 4 != 0 && (fila + columna) % 2 == 0 || columna > 7 && columna < 24 && fila % 4 != 0 && (fila + columna) % 2 != 0)
@@ -151,16 +157,14 @@ void Sistema::lecturaPeliculas()
 
 string Sistema::recibirPelicula(string peliculaCliente)
 {
-	getline(cin, peliculaCliente);
-	// se borran los espacios y se pone todo en mayuscula para poder comparar
-	peliculaCliente.erase(remove(peliculaCliente.begin(), peliculaCliente.end(), ' '), peliculaCliente.end());
-	transform(peliculaCliente.begin(), peliculaCliente.end(), peliculaCliente.begin(), ::toupper);
-	return peliculaCliente;
-}
+	//string rut1 = "21.934.925-2";
+	//int rut = pasarRut_StrInt(rut1);
+	//cout << rut << endl;
 
-void Sistema::menuPrincipal()
-{
-	cout << "____.:Bienvenido al CineRitsa3D:.____" << endl;
+	lecturaClientes();
+	lecturaPeliculas();
+
+	cout << "____.:Bienvenido a CineRitsa3D:.____" << endl;
 	bool salir = false;
 	string opcionString;
 	char op1;
