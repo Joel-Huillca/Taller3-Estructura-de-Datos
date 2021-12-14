@@ -301,13 +301,13 @@ void Sistema::menuFilaEspera()
 				if (peliculaClienteCheck._Equal(colaNombrePelicula.front())) {
 					Cliente* cliente = new Cliente(nombre,apellido,rut,peliculaClienteCheck);
 					cola_Esp.push(*cliente);
-					cout << "El cliente ha sido agregado" << endl;
+					cout << "El cliente ha sido agregado a la fila de espera" << endl;
 					return;
 				}
 				else
 					colaNombrePelicula.pop();
 			}
-			cout << "La pelicula que desea ver,no la maneja el cine" << endl;
+			cout << "La pelicula que desea ver no la maneja el cine,lo sentimos" << endl;
 		}
 		break;
 		case 'c':
