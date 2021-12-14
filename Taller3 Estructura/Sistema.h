@@ -37,7 +37,7 @@ public:
 	Sistema();
 	~Sistema();
 
-	void menuPrincipal();
+	void menuPrincipal(); 
 	
 	char subMenu();
 
