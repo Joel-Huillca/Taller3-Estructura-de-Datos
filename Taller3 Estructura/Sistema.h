@@ -22,7 +22,7 @@ class Sistema
 {
 private:
 	queue<Cliente> cola;
-	queue<Cliente> cola_Esp;
+	//queue<Cliente> cola_Esp;
 	queue<string> colaNombrePelicula;
 	Pelicula* pelicula;
 	Cliente* cliente;
