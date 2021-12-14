@@ -2,6 +2,7 @@
 
 #include <algorithm>
 #include <iostream>
+#include <istream>
 #include <stdlib.h>
 #include <stdio.h>
 #include <sstream>
@@ -22,6 +23,7 @@ class Sistema
 private:
 	queue<Cliente> cola;
 	queue<Cliente> cola_Esp;
+	queue<string> colaNombrePelicula;
 	Pelicula* pelicula;
 	Cliente* cliente;
 	MatrizPP* sala1 = new MatrizPP(20,30);
@@ -51,5 +53,9 @@ public:
 
 	bool salir_Menu();
 	//void agregaMpp(Cliente* cliente, int fila, int columna);
+
+	string recibirPelicula(string peliculaCliente);
+
+
 };
 
