@@ -401,29 +401,29 @@ void ArbolAvl::deleteNodeRec(NodoAVL*& node, int rut)
 			delete node;
 			checkOrder(aux, aux->getCliente()->getRutNumero());
 		}
-		else if (node->getLeft()) {
-			Nodo*& auxMinor = minimum(node->getLeft(), true);
-			if (node->getLeft()->getCliente()->getRutNumero() == auxMinor->getCliente()->getRutNumero()) {
-				node->setProduct(auxMinor->getProduct());
-				node->setLeft(NULL);
+		else if (node->getHijoIzq()) {
+			NodoAVL*& auxMinor = minimum(node->getHijoIzq(), true);
+			if (node->getHijoIzq()->getCliente()->getRutNumero() == auxMinor->getCliente()->getRutNumero()) {
+				node->setCliente(auxMinor->getCliente());
+				node->setHijoIzq(NULL);
 			}
 			else {
-				node->setProduct(auxMinor->getProduct());
-				auxMinor->getParent()->setRight(NULL);
+				node->setCliente(auxMinor->getCliente());
+				auxMinor->getPadre()->setHijoDer(NULL);
 			}
 			auxMinor = NULL;
 			delete auxMinor;
 			checkOrder(node, node->getCliente()->getRutNumero());
 		}
 		else {
-			Nodo*& auxMinor = minimum(node->getRight(), false);
-			if (node->getRight()->getCliente()->getRutNumero() == auxMinor->getCliente()->getRutNumero()) {
-				node->setProduct(auxMinor->getProduct());
-				node->setRight(NULL);
+			NodoAVL*& auxMinor = minimum(node->getHijoDer(), false);
+			if (node->getHijoDer()->getCliente()->getRutNumero() == auxMinor->getCliente()->getRutNumero()) {
+				node->setCliente(auxMinor->getCliente());
+				node->setHijoDer(NULL);
 			}
 			else {
-				node->setProduct(auxMinor->getProduct());
-				auxMinor->getParent()->setLeft(NULL);
+				node->setCliente(auxMinor->getCliente());
+				auxMinor->getPadre()->setHijoIzq(NULL);
 			}
 			auxMinor = NULL;
 			delete auxMinor;

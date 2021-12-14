@@ -137,6 +137,15 @@ string Sistema::recibirPelicula(string peliculaCliente)
 }
 
 void Sistema::menuPrincipal(){
+	Cliente* cliente1 = new Cliente("Juan", "Sanchez", "21.934.925-2", "The Butterfly Effect", 9, 29, "S");
+	Cliente* cliente2 = new Cliente("Paola", "Correa", "18.434.333-1", "Kung Fury", 3, 22, "C");
+	Cliente* cliente3 = new Cliente("Diana", "Lopez", "8.439.245-9", "Spiderman: No Way Home", 20, 33, "S");
+
+	arbolAVL->insertNewNode(cliente1);
+	arbolAVL->insertNewNode(cliente2);
+	arbolAVL->insertNewNode(cliente3);
+	arbolAVL->printTree();
+
 	cout << "____.:Bienvenido a CineRitsa3D:.____" << endl;
 	bool salir = false;
 	string opcionString;

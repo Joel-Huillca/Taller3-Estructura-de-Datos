@@ -33,6 +33,7 @@ private:
 	Pelicula* peliculaSala2 = new Pelicula();
 	Pelicula* peliculaSala3 = new Pelicula();
 	
+	ArbolAvl* arbolAVL = new ArbolAvl();
 public:
 	Sistema();
 	~Sistema();
