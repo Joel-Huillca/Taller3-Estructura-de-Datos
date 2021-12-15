@@ -26,8 +26,8 @@ void Sistema::lecturaClientes()
 
 		string columnaAux;
 		int columna;
-		string salaCola;
 
+		string salaCola;
 		stringstream s(linea);
 
 		getline(s, nombre, ';');
@@ -112,18 +112,8 @@ void Sistema::lecturaPeliculas()
 		Pelicula* peliculaTexto = new Pelicula(nombrePelicula, duracionHoras, duracionMinutos, generoPelicula, puntajePelicula, clasificacion);
 		colaNombrePelicula.push(peliculaTexto->getNombrePelicula());
 	}
-
 	archivoPeliculas.close();
 }
-
-int pasarRut_StrInt(string rut)
-{	//Eliminan los ' 'y'.'
-	rut.erase(remove(rut.begin(), rut.end(), ' '));
-	rut.erase(remove(rut.begin(), rut.end(), '.'));
-	rut.erase(8); //Solo quedan los primeros 6 digitos
-	int rutInt = stoi(rut);
-	return rutInt;
-}//Nos devuelve el rut sin el digito v. (formato int)
 
 string Sistema::recibirPelicula(string peliculaCliente)
 {
@@ -135,15 +125,6 @@ string Sistema::recibirPelicula(string peliculaCliente)
 }
 
 void Sistema::menuPrincipal(){
-	Cliente* cliente1 = new Cliente("Juan", "Sanchez", "21.934.925-2", "The Butterfly Effect", 9, 29, "S");
-	Cliente* cliente2 = new Cliente("Paola", "Correa", "18.434.333-1", "Kung Fury", 3, 22, "C");
-	Cliente* cliente3 = new Cliente("Diana", "Lopez", "8.439.245-9", "Spiderman: No Way Home", 20, 33, "S");
-
-	arbolAVL->insertNewNode(cliente1);
-	arbolAVL->insertNewNode(cliente2);
-	arbolAVL->insertNewNode(cliente3);
-	arbolAVL->printTree();
-
 	cout << "____.:Bienvenido a CineRitsa3D:.____" << endl;
 	bool salir = false;
 	string opcionString;
@@ -182,7 +163,6 @@ void Sistema::menuPrincipal(){
 		case 'c':
 		{
 			system("cls");
-			
 			menuEstadisticas();
 		}
 		break;
@@ -290,6 +270,7 @@ void Sistema::menuFilaEspera()
 					colaNombrePelicula.pop();
 			}
 			cout << "La pelicula que desea ver no la maneja el cine,lo sentimos" << endl;
+			menuFilaEspera();
 		}
 		break;
 		case 'c':
@@ -299,7 +280,6 @@ void Sistema::menuFilaEspera()
 			{
 				cola.pop();
 			}
-			menuFilaEspera();
 		}
 		break;
 		case 'd':
@@ -533,6 +513,14 @@ void Sistema::menuEstadisticas()
 
 bool  Sistema::salir_Menu()
 {
+	/*Cliente* cliente1 = new Cliente("Juan", "Sanchez", "21.934.925-2", "The Butterfly Effect", 9, 29, "S");
+	Cliente* cliente2 = new Cliente("Paola", "Correa", "18.434.333-1", "Kung Fury", 3, 22, "C");
+	Cliente* cliente3 = new Cliente("Diana", "Lopez", "8.439.245-9", "Spiderman: No Way Home", 20, 33, "S");
+
+	arbolAVL->insertNewNode(cliente1);
+	arbolAVL->insertNewNode(cliente2);
+	arbolAVL->insertNewNode(cliente3);
+	arbolAVL->printTree();*/
 	string opcionString;
 	cout << "Esta seguro de salir del sistema?\n>>    [1] Si | [2] No : ";
 	cin >> opcionString;

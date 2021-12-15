@@ -4,23 +4,7 @@ ArbolAvl::ArbolAvl()
 {
 	this->raiz = nullptr;
 }
-/*
-NodoAVL* ArbolAvl::getRaiz()
-{
-	return this->raiz;
-}*/
-/*
-void ArbolAvl::agregarCliente(Cliente* cliente)
-{
-	if (!this->raiz) //Mientras que se la Raiz = nullptr
-	{
-		this->raiz = new NodoAVL(cliente);
-	}
-	else
-	{
-		this->raiz->agregar(cliente);
-	}
-}*/
+
 
 ArbolAvl::~ArbolAvl()
 {
@@ -29,19 +13,14 @@ ArbolAvl::~ArbolAvl()
 
 
 
-/*
-Este método hace un llamado a dos métodos, uno de inserción recursivo y otro el cual revisa el orden del árbol AVL.
-Para ambos métodos se envía el nuevo nodo. Este método recibe por parámetro un Producto.
-*/
+
 void ArbolAvl::insertNewNode(Cliente* cliente)
 {
 	NodoAVL* newNode = new NodoAVL(cliente);
 	insertNewNodeRec(this->raiz, *newNode);
 	checkOrder(newNode, newNode->getCliente()->getRutNumero());
 }
-/*
-Este va insertando cada nodo de forma recursiva dentro del árbol AVL. Para esto, se le envía por parámetros el nodo actual y el nuevo nodo.
-*/
+
 void ArbolAvl::insertNewNodeRec(NodoAVL*& actual, NodoAVL& newNode)
 {
 	if (actual) {
@@ -62,9 +41,7 @@ void ArbolAvl::insertNewNodeRec(NodoAVL*& actual, NodoAVL& newNode)
 	}
 	*&actual = &newNode;
 }
-/*
-Este método mide la altura del árbol AVL recibiendo por parámetro un nodo.
-*/
+
 int ArbolAvl::height(NodoAVL* node)
 {
 	int h = 0;
@@ -79,9 +56,7 @@ int ArbolAvl::height(NodoAVL* node)
 	}
 	return 0;
 }
-/*
-Este método calcula el FB del árbol AVL recibiendo por parámetro un nodo.
-*/
+
 int ArbolAvl::calculateOrder(NodoAVL* node)
 {
 	if (!node->getHijoDer() && !node->getHijoIzq()) {
@@ -101,10 +76,7 @@ int ArbolAvl::calculateOrder(NodoAVL* node)
 		return B - A;
 	}
 }
-/*
-Este método verifica el orden de cada nodo dentro del árbol. En el caso que el FB  de un nodo en específico genere un overflow,
-este método llamará los métodos de rotación. Este método recibe por parámetro un nodo y el código de un producto.
-*/
+
 int ArbolAvl::checkOrder(NodoAVL* newNode, int rut)
 {
 	int order;
@@ -150,10 +122,7 @@ int ArbolAvl::checkOrder(NodoAVL* newNode, int rut)
 		}
 	}
 }
-/*
-Este método es llamado por el método checkOrder en caso de haber ocurrido un overflow.
-Su función es hacer una rotación RR del nodo afectado recibiendo por parámetro el nodo actual.
-*/
+
 void ArbolAvl::rotationRR(NodoAVL* actual)
 {
 	NodoAVL* aux1 = actual;
@@ -214,10 +183,7 @@ void ArbolAvl::rotationRR(NodoAVL* actual)
 
 	}
 }
-/*
-Este método es llamado por el método checkOrder en caso de haber ocurrido un overflow.
-Su función es hacer una rotación LL del nodo afectado recibiendo por parámetro el nodo actual.
-*/
+
 void ArbolAvl::rotationLL(NodoAVL* actual)
 {
 	NodoAVL* aux1 = actual;
@@ -273,10 +239,7 @@ void ArbolAvl::rotationLL(NodoAVL* actual)
 		return;
 	}
 }
-/*
-Este método es llamado por el método checkOrder en caso de haber ocurrido un overflow.
-Su función es hacer una rotación RL del nodo afectado recibiendo por parámetro el nodo actual.
-*/
+
 void ArbolAvl::rotationRL(NodoAVL* actual)
 {
 	NodoAVL* aux1 = actual;
@@ -322,10 +285,7 @@ void ArbolAvl::rotationRL(NodoAVL* actual)
 		return;
 	}
 }
-/*
-Este método es llamado por el método checkOrder en caso de haber ocurrido un overflow.
-Su función es hacer una rotación LR del nodo afectado recibiendo por parámetro el nodo actual.
-*/
+
 void ArbolAvl::rotationLR(NodoAVL* actual)
 {
 	NodoAVL* aux1 = actual;
@@ -369,18 +329,12 @@ void ArbolAvl::rotationLR(NodoAVL* actual)
 		return;
 	}
 }
-/*
-Este método hace un llamado a otro método el cual elimina un producto de forma recursiva recibiendo
-por parámetro el código Producto
-*/
+
 void ArbolAvl::deleteNode(int rut)
 {
 	deleteNodeRec(this->raiz, rut);
 }
-/*
-Este elimina un producto del árbol AVL de forma recursiva y hace un llamado almétodo checkOrder
-para verificar el orden del árbol. Para esto, se le envía por parámetros un nodo y el código del producto.
-*/
+
 void ArbolAvl::deleteNodeRec(NodoAVL*& node, int rut)
 {
 	if (!node)
@@ -431,10 +385,6 @@ void ArbolAvl::deleteNodeRec(NodoAVL*& node, int rut)
 		}
 	}
 }
-/*
-Este método recibe por parámetros un nodo y un booleano.
-Este busca la última hoja del árbol (derecha o izquierda) y lo retorna.
-*/
 NodoAVL*& ArbolAvl::minimum(NodoAVL*& node, bool direction)
 {
 	if (direction) {
@@ -456,20 +406,12 @@ NodoAVL*& ArbolAvl::minimum(NodoAVL*& node, bool direction)
 		return node;
 	}
 }
-/*
-Este método recibe un Producto y hace un llamado a otro método recursivo el cual
-busca este producto en el Árbol, recibiendo por parámetro el código Producto y la
-raíz del Árbol. Después retorna el producto.
-*/
+
 Cliente* ArbolAvl::searchNode(int rut)
 {
 	return searchNodeRec(this->raiz, rut);
 }
-/*
-Este busca un producto del árbol AVL de forma recursiva.
-Para esto, se le envía por parámetros un nodo y el código del producto.
-Una vez encontrado el producto, este se retorna.
-*/
+
 Cliente* ArbolAvl::searchNodeRec(NodoAVL* node, int rut)
 {
 	if (!node)
@@ -480,19 +422,11 @@ Cliente* ArbolAvl::searchNodeRec(NodoAVL* node, int rut)
 		return searchNodeRec(node->getHijoIzq(), rut);
 	return searchNodeRec(node->getHijoDer(), rut);
 }
-/*
-Este método hace un llamado a otro método el cual despliega los productos
-de forma recursiva, para esto envía la raíz como parámetro.
-*/
 void ArbolAvl::printTree()
 {
 	printTreeRec(this->raiz);
 }
-/*
-Este va desplegando cada dato de los productos del árbol AVL de forma recursiva.
-Para esto, se le envía por parámetros un nodo, se accede al producto de este nodo
-y se imprimen los datos.
-*/
+
 void ArbolAvl::printTreeRec(NodoAVL*& node)
 {
 	if (!node) {
@@ -505,19 +439,12 @@ void ArbolAvl::printTreeRec(NodoAVL*& node)
 		printTreeRec(node->getHijoIzq());
 	}
 }
-/*
-Este método hace un llamado a otro método el cual elimina el árbol
-completo de forma recursiva. Se le envía al método recursivo la raíz
-del Árbol como parámetro.
-*/
+
 void ArbolAvl::deleteTree()
 {
 	deleteTreeRec(this->raiz);
 }
-/*
-Este elimina cada nodo del árbol AVL de forma recursiva.
-Para esto, se le envía por parámetros un nodo.
-*/
+
 void ArbolAvl::deleteTreeRec(NodoAVL* actual) {
 	if (actual) {
 		deleteTreeRec(actual->getHijoIzq());
@@ -527,22 +454,3 @@ void ArbolAvl::deleteTreeRec(NodoAVL* actual) {
 	}
 	return;
 }
-
-/*
-Cliente ArbolAvl::exportarArbol()
-{
-	printTreeRec(this->raiz);
-}
-
-Cliente ArbolAvl::treeRec(NodoAVL*& node)
-{
-	if (!node) {
-		return;
-	}
-	else {
-		printTreeRec(node->getHijoDer());
-		node->getCliente()->printCliente();
-
-		printTreeRec(node->getHijoIzq());
-	}
-}*/

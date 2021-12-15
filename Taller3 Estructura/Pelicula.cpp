@@ -59,3 +59,7 @@ void Pelicula::setNombrePelicula(string nuevoNombrePelicula)
 {
 	this->nombrePelicula = nuevoNombrePelicula;
 }
+
+Pelicula::~Pelicula()
+{
+}

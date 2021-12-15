@@ -1,5 +1,5 @@
 #include "NodoMpp.h"
-NodoMpp::NodoMpp() //ACOL y el ARROW
+NodoMpp::NodoMpp() 
 {
 	this->left = this;
 	this->up = this;
@@ -66,5 +66,4 @@ void NodoMpp::setColumna(int columna)
 
 NodoMpp::~NodoMpp()
 {
-	//delete cliente; // llamar al Nodo
 }

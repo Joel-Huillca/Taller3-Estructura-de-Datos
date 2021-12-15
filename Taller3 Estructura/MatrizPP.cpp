@@ -23,42 +23,6 @@ MatrizPP::~MatrizPP()
 {
 }
 
-
-//void MatrizPP::imprimir()
-//{
-	/*
-	for (int i=1; i<=filas; i++)
-	{
-		string fila;
-		NodoMpp*aux = AROW[i].getLeft();
-		int espaciosVacios = columnas - aux->getColumna();//Obtiene la distancia entre auxliar....
-		while (true)
-		{
-			for (int j=0; j<espaciosVacios; j++)
-			{
-
-				fila = "x " + fila;
-			}
-			if (aux->getColumna() == 0) break;
-
-			//____________________________________
-			stringstream s;
-			if (aux->getCliente()->getFila())
-			{
-				s << "o ";
-			}//____________________________________
-			
-
-			fila = s.str() + fila;
-			espaciosVacios = aux->getColumna() - aux->getLeft()->getColumna() - 1;
-			aux = aux->getLeft();
-		}
-		cout << fila << endl;
-	}
-	*/
-	//}
-
-
 void MatrizPP::imprimirSala()
 {
 	for (int i = 1; i < filas + 1; i++)

@@ -69,7 +69,7 @@ int Cliente::getRutNumero()
 	rutAux.erase(8); //Solo quedan los primeros 6 digitos
 	int rutInt = stoi(rut);
 	return rutInt;
-}//Nos devuelve el rut sin el digito v. (formato int)
+}
 
 void Cliente::printCliente()
 {
@@ -87,6 +87,10 @@ string Cliente::setSala_columna(string new_sala_Columna)
 	return this->salaCola = new_sala_Columna;
 }
 
+Cliente::~Cliente()
+{
+}
+
 int Cliente::setFila(int new_fila)
 {
 	return this->fila = new_fila;
@@ -96,10 +100,3 @@ int Cliente::setColumna(int new_columna)
 {
 	return this->columna = new_columna;
 }
-
-
-
-
-
-
-
