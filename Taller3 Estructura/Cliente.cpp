@@ -69,13 +69,13 @@ int Cliente::getRutNumero()
 	rutAux.erase(8); //Solo quedan los primeros 6 digitos
 	int rutInt = stoi(rut);
 	return rutInt;
-}
+}//Nos devuelve el rut sin el digito v. (formato int)
+
 void Cliente::printCliente()
 {
-	cout << "Nombre: " << this->nombre << ", Apellido: "
-		<< this->apellido << ", Rut: " << this->rut << ", Pelicula: " << this->pelicula << endl << endl;
+	cout << "\nNombre: " << this->nombre << ", Apellido: "
+		<< this->apellido << ", Rut: " << this->rut << ", Pelicula: " << this->pelicula <<"\n" << endl;
 }
-//Nos devuelve el rut sin el digito v. (formato int)
 
 
 string Cliente::setPelicula(string new_pelicula)
