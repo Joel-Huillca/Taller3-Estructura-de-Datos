@@ -340,7 +340,7 @@ void Sistema::menuSalaCine()
 			cout << "\n  ****|Sub-Menu|****\n °Sala 1 °"<<endl;
 			char opSubMenu = subMenu();
 			int cantActualSala1 = sala1->recorrerSala();
-			float porcSala1 = (cantActualSala1 / 180) * 100;
+			float porcSala1 = (cantActualSala1 / 180.0) * 100.0;
 			bool salaVacia1 = sala1->estaVacia();
 			if (opSubMenu == 'a')
 			{
@@ -383,13 +383,14 @@ void Sistema::menuSalaCine()
 			cout << "\n  ****|Sub-Menu|****\n °Sala 2 °" << endl;
 			char opSubMenu = subMenu();
 			int cantActualSala2 = sala2->recorrerSala();
+			float porcSala2 = (cantActualSala2 / 180.0) * 100.0;
 			bool salaVacia2 = sala2->estaVacia();
 			if (opSubMenu == 'a')
 			{
 				if (peliculaSala2->getNombrePelicula() == "")
 					cout << "La  sala 2 no tiene pelicula asignada" << endl;
 				else
-					cout << "La pelicula asignada a la sala 2 es " << peliculaSala2->getNombrePelicula() << " y el porcentaje de la sala ocupada es " << (cantActualSala2/180)*100 << " % " << endl;
+					cout << "La pelicula asignada a la sala 2 es " << peliculaSala2->getNombrePelicula() << " y el porcentaje de la sala ocupada es " << porcSala2 << " % " << endl;
 			}
 			if (opSubMenu == 'b')
 			{
@@ -425,13 +426,14 @@ void Sistema::menuSalaCine()
 			cout << "\n  ****|Sub-Menu|****\n °Sala 3 °" << endl;
 			char opSubMenu = subMenu();
 			int cantActualSala3 = sala3->recorrerSala();
+			float porcSala3 = (cantActualSala3 / 180.0) * 100.0;
 			bool salaVacia3 = sala3->estaVacia();
 			if (opSubMenu == 'a')
 			{
 				if (peliculaSala3->getNombrePelicula() == "")
 					cout << "La sala 3 no tiene pelicula asignada" << endl;
 				else
-					cout << "La pelicula asignada a la sala 3 es " << peliculaSala3->getNombrePelicula() << " y el porcentaje de la sala ocupada es " << (cantActualSala3/180)*100 << " % "<< endl;
+					cout << "La pelicula asignada a la sala 3 es " << peliculaSala3->getNombrePelicula() << " y el porcentaje de la sala ocupada es " << porcSala3 << " % "<< endl;
 			}
 			if (opSubMenu == 'b')
 			{
