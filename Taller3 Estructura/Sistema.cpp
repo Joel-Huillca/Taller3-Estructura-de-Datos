@@ -495,7 +495,7 @@ void Sistema::menuEstadisticas()
 	{
 	case 'a':
 	{
-		cout << "porcentaje de espectadores que vieron cada pelicula(recorrer arbol avl)"<<endl;
+		cout << "porcentaje de espectadores que vieron cada pelicula(recorrer arbol avl)" << endl;
 	}
 	break;
 	case 'b':
@@ -505,29 +505,29 @@ void Sistema::menuEstadisticas()
 			cola.pop();
 			contCola++;
 		}
-		cout << "El numero de personas en la fila de espera es " << contCola ;
+		cout << "El numero de personas en la fila de espera es " << contCola;
 	}
 	break;
 	case 'c':
 	{
-		
-		cout << "La sala 1 tiene "<< sala1->recorrerSala() << " personas en la sala de cine"<<endl;
-		cout << "La sala 2 tiene "<< sala2->recorrerSala() << " personas en la sala de cine"<<endl;
-		cout << "La sala 3 tiene "<< sala3->recorrerSala() << " personas en la sala de cine"<<endl;
+
+		cout << "La sala 1 tiene " << sala1->recorrerSala() << " personas en la sala de cine" << endl;
+		cout << "La sala 2 tiene " << sala2->recorrerSala() << " personas en la sala de cine" << endl;
+		cout << "La sala 3 tiene " << sala3->recorrerSala() << " personas en la sala de cine" << endl;
 	}
 	break;
 	case 'd':
 	{
-		cout << "dddddddddd" << endl;
+		cout << "La persona mas longeva es " << endl;
+		cout << "La persona mas joven es " << endl;
 	}
 	break;
 
 	case 'e':
 	{
-		cout << "eeeeeeeeeeeee" << endl;
+		cout << "Saliendo del menu estadisticas..." << endl;
 	}
 	break;
-
 	}
 }
 
