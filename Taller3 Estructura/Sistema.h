@@ -22,7 +22,6 @@ class Sistema
 {
 private:
 	queue<Cliente> cola;
-	//queue<Cliente> cola_Esp;
 	queue<string> colaNombrePelicula;
 	Pelicula* pelicula;
 	Cliente* cliente;
@@ -35,27 +34,28 @@ private:
 	
 	ArbolAvl* arbolAVL = new ArbolAvl();
 public:
+	/*Constructor de la clase Sistema*/
 	Sistema();
+	/*Destructor de la clase Sistema*/
 	~Sistema();
-
+	/*Menu principal de la aplicacion*/
 	void menuPrincipal(); 
-	
+	/*Sub menu para el menu sala de cine,retorna un char*/
 	char subMenu();
-
+	/*Menu fila de espera para operar con la fila*/
 	void menuFilaEspera();
-
+	/* Menu sala de cine para operar con la sala de cine*/
 	void menuSalaCine();
-
+	/*Menu estadisticas para obtener las estadisticas solicitadas*/
 	void menuEstadisticas();
-
+	/*Metodo para leer y guardar los clientes del txt*/
 	void lecturaClientes();
-
+	/*Metodo para leer y guardas las peliculas del txt*/
 	void lecturaPeliculas();
-
+	/*Menu para salir y desplegar el archivo de salida*/
 	bool salir_Menu();
-
+	/*Metodo para comparar si la pelicula que ingresa el cliente esta en el sistema
+	@param peliculaCliente - pelicula que el cliente quiere ver*/
 	string recibirPelicula(string peliculaCliente);
-
-
 };
 
