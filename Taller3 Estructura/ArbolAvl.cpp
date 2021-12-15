@@ -501,6 +501,7 @@ void ArbolAvl::printTreeRec(NodoAVL*& node)
 	else {
 		printTreeRec(node->getHijoDer());
 		node->getCliente()->printCliente();
+		
 		printTreeRec(node->getHijoIzq());
 	}
 }
@@ -527,4 +528,21 @@ void ArbolAvl::deleteTreeRec(NodoAVL* actual) {
 	return;
 }
 
+/*
+Cliente ArbolAvl::exportarArbol()
+{
+	printTreeRec(this->raiz);
+}
 
+Cliente ArbolAvl::treeRec(NodoAVL*& node)
+{
+	if (!node) {
+		return;
+	}
+	else {
+		printTreeRec(node->getHijoDer());
+		node->getCliente()->printCliente();
+
+		printTreeRec(node->getHijoIzq());
+	}
+}*/

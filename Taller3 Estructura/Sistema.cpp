@@ -125,8 +125,6 @@ int pasarRut_StrInt(string rut)
 	return rutInt;
 }//Nos devuelve el rut sin el digito v. (formato int)
 
-
-
 string Sistema::recibirPelicula(string peliculaCliente)
 {
 	getline(cin, peliculaCliente);
@@ -141,10 +139,10 @@ void Sistema::menuPrincipal(){
 	Cliente* cliente2 = new Cliente("Paola", "Correa", "18.434.333-1", "Kung Fury", 3, 22, "C");
 	Cliente* cliente3 = new Cliente("Diana", "Lopez", "8.439.245-9", "Spiderman: No Way Home", 20, 33, "S");
 
-	//arbolAVL->insertNewNode(cliente1);
-	//arbolAVL->insertNewNode(cliente2);
-	//arbolAVL->insertNewNode(cliente3);
-	//arbolAVL->printTree();
+	arbolAVL->insertNewNode(cliente1);
+	arbolAVL->insertNewNode(cliente2);
+	arbolAVL->insertNewNode(cliente3);
+	arbolAVL->printTree();
 
 	cout << "____.:Bienvenido a CineRitsa3D:.____" << endl;
 	bool salir = false;
@@ -196,7 +194,6 @@ void Sistema::menuPrincipal(){
 	}
 	
 }
-
 
 char Sistema::subMenu()
 {
@@ -548,8 +545,8 @@ bool  Sistema::salir_Menu()
 		
 		archivo <<"Cliente 1" << "," <<"Apellido 1" << "," << "Rut" << "," << "Pelicula" ;
 		//archivo <<"Cliente 1" << "," <<"Apellido 1" << "," << (listaNaves->getCantElem() - FcantNavDest) << "," << FmayorGalax << "," << FcantNavesLlenas;
-
-
+		
+		
 
 		cout << "\n\n ------------------------------------- \n|Hasta luego y GRACIAS por preferirnos|\n|	    Cine Ritsa 3D	      |\n ------------------------------------- \n";
 		return true;
@@ -560,31 +557,5 @@ bool  Sistema::salir_Menu()
 	}
 }
 
-/*
-bool  Sistema::salir_Menu()
-{
-	string opcionString;
-	char op1;
-	cout << "\nEsta seguro de salir del sistema?" << endl;
-	cout << "[1] Si | [2] No : ";
-	cin >> opcionString;
-	if (opcionString._Equal("1") || opcionString._Equal("2"))
-	{
-		if (opcionString._Equal("1")) op1 = '1';
-		if (opcionString._Equal("2")) op1 = '2';
-		switch (op1)
-		{
-		case '1':
-
-			cout << "\n\n ------------------------------------- \n|Hasta luego y GRACIAS por preferirnos|\n|	    Cine Ritsa 3D	      |\n ------------------------------------- \n";
-			return true;
-		case '2':
-			system("cls");
-			return false;
-		}
-	}
-	else salir_Menu();
-	
-}*/
 
 

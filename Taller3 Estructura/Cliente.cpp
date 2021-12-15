@@ -73,8 +73,7 @@ int Cliente::getRutNumero()
 
 void Cliente::printCliente()
 {
-	cout << "\nNombre: " << this->nombre << ", Apellido: "
-		<< this->apellido << ", Rut: " << this->rut << ", Pelicula: " << this->pelicula <<"\n" << endl;
+	cout << "\nNombre: " << this->nombre << ", Apellido: "<< this->apellido << ", Rut: " << this->rut << ", Pelicula: " << this->pelicula << endl;
 }
 
 

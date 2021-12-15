@@ -27,8 +27,10 @@ private:
 	void deleteNodeRec(NodoAVL*& node, int rut);
 	NodoAVL*& minimum(NodoAVL*& node, bool direction);
 	Cliente* searchNodeRec(NodoAVL* node, int rut);
-	void printTreeRec(NodoAVL*& node);
 	void deleteTreeRec(NodoAVL* actual);
+	void printTreeRec(NodoAVL*& node);
+
+	//Cliente* treeRec(NodoAVL*& node); //+++
 
 public:
 	ArbolAvl();
@@ -40,7 +42,8 @@ public:
 	Cliente* searchNode(int rut);
 	void printTree();
 	void deleteTree();
-
+	
+	//Cliente* exportarArbol(); //+++
 
 
 };
