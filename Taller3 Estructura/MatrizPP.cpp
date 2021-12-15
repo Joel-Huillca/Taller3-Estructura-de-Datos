@@ -166,10 +166,6 @@ int MatrizPP::recorrerSala()
 		 nodoMpp->setLeft(aux2->getUp());
 		 aux2->setUp(nodoMpp);
 	 }
-	 else
-	 {
-		 cout << "no es valido";
-	 }
 }
 
  void MatrizPP::vaciarSala()

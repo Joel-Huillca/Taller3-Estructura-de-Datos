@@ -29,9 +29,9 @@ private:
 	MatrizPP* sala1 = new MatrizPP(20,30);
 	MatrizPP* sala2 = new MatrizPP(20,30);
 	MatrizPP* sala3 = new MatrizPP(20,30);
-	Pelicula* peliculaSala1 = new Pelicula();
-	Pelicula* peliculaSala2 = new Pelicula();
-	Pelicula* peliculaSala3 = new Pelicula();
+	Pelicula* peliculaSala1 = new Pelicula("Spiderman: No Way Home");
+	Pelicula* peliculaSala2 = new Pelicula("The Lorax");
+	Pelicula* peliculaSala3 = new Pelicula("John Wick");
 	
 	ArbolAvl* arbolAVL = new ArbolAvl();
 public:

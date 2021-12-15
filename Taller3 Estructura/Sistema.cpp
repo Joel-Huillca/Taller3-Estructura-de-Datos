@@ -340,13 +340,14 @@ void Sistema::menuSalaCine()
 			cout << "\n  ****|Sub-Menu|****\n °Sala 1 °"<<endl;
 			char opSubMenu = subMenu();
 			int cantActualSala1 = sala1->recorrerSala();
+			float porcSala1 = (cantActualSala1 / 180) * 100;
 			bool salaVacia1 = sala1->estaVacia();
 			if (opSubMenu == 'a')
 			{
 				if (peliculaSala1->getNombrePelicula() == "")
 					cout << "La sala 1 no tiene pelicula asignada" << endl;
 				else
-					cout << "La pelicula asignada a la sala 1 es " << peliculaSala1->getNombrePelicula() << " y el porcentaje de la sala ocupada es " << (cantActualSala1/180)*100 << " % " <<endl; //(cant actual/180)*100
+					cout << "La pelicula asignada a la sala 1 es " << peliculaSala1->getNombrePelicula() << " y el porcentaje de la sala ocupada es " << porcSala1 << " % " <<endl; //(cant actual/180)*100
 			}
 			if (opSubMenu == 'b')
 			{
