@@ -53,7 +53,6 @@ public:
 	void lecturaPeliculas();
 
 	bool salir_Menu();
-	//void agregaMpp(Cliente* cliente, int fila, int columna);
 
 	string recibirPelicula(string peliculaCliente);
 
